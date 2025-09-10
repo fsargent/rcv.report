@@ -1,0 +1,9 @@
+/target
+raw-data/**/*.xls
+raw-data/**/*.xlsx
+raw-data/**/*.csv
+raw-data/**/*.json
+preprocessed
+reports
+election-metadata
+.idea

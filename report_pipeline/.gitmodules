@@ -1,0 +1,7 @@
+[submodule "election-metadata"]
+    path = election-metadata
+    url = git@github.com:ranked-vote/election-metadata.git
+
+[submodule "reports"]
+    path = reports
+    url = git@github.com:ranked-vote/reports.git
