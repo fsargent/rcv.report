@@ -77,7 +77,8 @@ export interface IElectionInfo {
 
 export interface ICandidate {
     name: string
-    writeIn: boolean
+    writeIn?: boolean
+    candidate_type?: string
 }
 
 export interface ITabulatorRound {

@@ -22,6 +22,11 @@
     }
   }
 
+  function getCandidateNameById(cid: number): string {
+    const c = report.candidates[cid];
+    return c ? c.name : "";
+  }
+
   setContext("candidates", {
     getCandidate,
   });
@@ -79,13 +84,22 @@
       {:else}. No elimination rounds were necessary to determine the outcome.
       {/if}
     </p>
-    <p>
-      {#if report.winner == report.condorcet}
-        <strong>{getCandidate(report.winner).name}</strong> was also the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
-      {:else}
-        <strong>{getCandidate(report.condorcet).name}</strong> was the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
-      {/if}
-    </p>
+    {#if report.condorcet != null}
+      <p>
+        {#if report.winner == report.condorcet}
+          <strong>{getCandidate(report.winner).name}</strong> was also the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
+        {:else}
+          <strong>{getCandidate(report.condorcet).name}</strong> was the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
+        {/if}
+      </p>
+    {:else}
+      <p>
+        No Condorcet winner; multiple candidates form the
+        <a href="https://en.wikipedia.org/wiki/Smith_set">Smith set</a>:
+        {report.smithSet.map(getCandidateNameById).join(", ")}
+        .
+      </p>
+    {/if}
   </div>
   <div class="rightCol">
     <VoteCounts candidateVotes={report.totalVotes} />
