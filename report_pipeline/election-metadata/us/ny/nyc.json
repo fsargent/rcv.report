@@ -1,0 +1,59 @@
+{
+  "name": "New York City",
+  "path": "us/ny/nyc",
+  "kind": "city",
+  "offices": {
+    "mayor-primary-dem": {
+      "name": "Mayor Nominee (Dem)"
+    }
+  },
+  "elections": {
+    "2021/06": {
+      "name": "Democratic Caucus",
+      "date": "2021-06-22",
+      "dataFormat": "us_ny_nyc",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor-primary-dem",
+          "loaderParams": {
+            "candidatesFile": "2021P_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2021P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Citywide",
+            "officeName": "DEM Mayor"
+          }
+        }
+      ],
+      "files": {
+        "2021P1V1_ABS.xlsx": "54a7a8f3e90371340edfacebb31948babc483ba1",
+        "2021P1V1_AFF.xlsx": "0490a9799c6e8ec82c0f3665676c0fe57d960310",
+        "2021P1V1_ELE1.xlsx": "919fedddf9ba709978890faa3aba25e10f74fd35",
+        "2021P1V1_ELE2.xlsx": "317df95ac689c63b55ca39ac7a64c323609e716a",
+        "2021P1V1_ELE3.xlsx": "9073c8c1d2b84af6c534915d3fc90e448096e0c0",
+        "2021P1V1_EMG.xlsx": "9040e5960e6d47b782f1f34369fd5fcbcec3de27",
+        "2021P2V1_ABS.xlsx": "9c802bd802112d03dbe9ce62726b6f0d02c49c01",
+        "2021P2V1_AFF.xlsx": "b037af7715fc6d9bb36c6de40c57c9cb2a241fdf",
+        "2021P2V1_ELE.xlsx": "5c7c9ac44106048a776b73834c08ec0a7f8f1b8f",
+        "2021P2V1_EMG.xlsx": "ba97901ec80db323f2f1ad85fe0fc706d060a888",
+        "2021P3V1_ABS.xlsx": "a735ea56c8e32aa646d1e6c4575ce4b5f95853fb",
+        "2021P3V1_AFF.xlsx": "6131327b9307508cf61d75364afe5d140451566c",
+        "2021P3V1_ELE1.xlsx": "82c79db9762b4df1bbd65b942614b9c704291958",
+        "2021P3V1_ELE2.xlsx": "d7633e0c43fadfd15ca017b6367d731fd6599ef8",
+        "2021P3V1_ELE3.xlsx": "9351a3007c952f015939a63fa1c18dfdcd7686dc",
+        "2021P3V1_ELE4.xlsx": "a18c20afdb3704597077d64009a274c8e509f6b6",
+        "2021P3V1_EMG.xlsx": "cb51a33f3906a56255b1c574447f8d75f4ca20f5",
+        "2021P4V1_ABS_DEM.xlsx": "e13ffa20d6dee38c0af3aaf717e8bd7477277134",
+        "2021P4V1_ABS_REP_CON.xlsx": "8a11025c9d49fb5375727bb1644058e6a677d814",
+        "2021P4V1_AFF.xlsx": "abc28f4ae16735cec0410f2bf89762ffac158436",
+        "2021P4V1_ELE1.xlsx": "1950276c730786668519a92af0d2b8bb03086f0a",
+        "2021P4V1_ELE2.xlsx": "963d9d6ba56562bd858d5f93a71c5376cb60365b",
+        "2021P4V1_ELE3.xlsx": "324947233445586def32664e477d9250bbc411d5",
+        "2021P5V1_ELE.xlsx": "31d199f84d14aea0dddc5fc4baccebd1f239636a",
+        "2021PV5_OTH.xlsx": "060fd868b3a28caa183a2e595db13353a0ead74d",
+        "2021P_CandidacyID_To_Name.xlsx": "210db9a877b0710d77f5770ea27529915aba90df"
+      },
+      "website": "https://vote.nyc/page/election-results-summary#p0"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT jurisdiction_path, election_path, contest_office, stage, \n                   duration_ms, ballots_processed, created_at\n            FROM processing_metrics\n            WHERE jurisdiction_path = ? AND election_path = ?\n            ORDER BY created_at DESC\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "jurisdiction_path",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "election_path",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "contest_office",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "stage",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "duration_ms",
+        "ordinal": 4,
+        "type_info": "Int64"
+      },
+      {
+        "name": "ballots_processed",
+        "ordinal": 5,
+        "type_info": "Int64"
+      },
+      {
+        "name": "created_at",
+        "ordinal": 6,
+        "type_info": "Datetime"
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      false,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "a2758d408bca34a12f7128e6c01c291e6a2cfd9b1fd5be5fec594d2b5403cf0b"
+}

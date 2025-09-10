@@ -1,0 +1,62 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT \n                e.id,\n                e.jurisdiction_id,\n                j.path as jurisdiction_path,\n                j.name as jurisdiction_name,\n                e.path as election_path,\n                e.name,\n                e.date,\n                e.data_format\n            FROM elections e\n            JOIN jurisdictions j ON e.jurisdiction_id = j.id\n            ORDER BY e.date DESC\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "jurisdiction_id",
+        "ordinal": 1,
+        "type_info": "Int64"
+      },
+      {
+        "name": "jurisdiction_path",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "jurisdiction_name",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "election_path",
+        "ordinal": 4,
+        "type_info": "Text"
+      },
+      {
+        "name": "name",
+        "ordinal": 5,
+        "type_info": "Text"
+      },
+      {
+        "name": "date",
+        "ordinal": 6,
+        "type_info": "Date"
+      },
+      {
+        "name": "data_format",
+        "ordinal": 7,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "50b6b0e20577726d23f096daaec4a08ea76ff9de75ebc76575c2858bee7d0c8d"
+}

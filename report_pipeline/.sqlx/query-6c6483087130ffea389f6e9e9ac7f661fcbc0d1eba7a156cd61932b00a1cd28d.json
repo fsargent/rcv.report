@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        CREATE TABLE IF NOT EXISTS processing_metrics (\n            id INTEGER PRIMARY KEY,\n            jurisdiction_path TEXT NOT NULL,\n            election_path TEXT NOT NULL,\n            contest_office TEXT,\n            stage TEXT NOT NULL,\n            duration_ms INTEGER NOT NULL,\n            ballots_processed INTEGER,\n            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n        )\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": []
+  },
+  "hash": "6c6483087130ffea389f6e9e9ac7f661fcbc0d1eba7a156cd61932b00a1cd28d"
+}

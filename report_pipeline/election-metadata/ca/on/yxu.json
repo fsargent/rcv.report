@@ -1,0 +1,171 @@
+{
+  "name": "London, Ontario",
+  "path": "ca/on/yxu",
+  "kind": "municipal",
+  "offices": {
+    "cw01": {
+      "name": "Ward 1 Councilor"
+    },
+    "cw02": {
+      "name": "Ward 2 Councilor"
+    },
+    "cw03": {
+      "name": "Ward 3 Councilor"
+    },
+    "cw04": {
+      "name": "Ward 4 Councilor"
+    },
+    "cw05": {
+      "name": "Ward 5 Councilor"
+    },
+    "cw06": {
+      "name": "Ward 6 Councilor"
+    },
+    "cw07": {
+      "name": "Ward 7 Councilor"
+    },
+    "cw08": {
+      "name": "Ward 8 Councilor"
+    },
+    "cw09": {
+      "name": "Ward 9 Councilor"
+    },
+    "cw10": {
+      "name": "Ward 10 Councilor"
+    },
+    "cw11": {
+      "name": "Ward 11 Councilor"
+    },
+    "cw12": {
+      "name": "Ward 12 Councilor"
+    },
+    "cw13": {
+      "name": "Ward 13 Councilor"
+    },
+    "cw14": {
+      "name": "Ward 14 Councilor"
+    },
+    "mayor": {
+      "name": "Mayor"
+    }
+  },
+  "elections": {
+    "2018/10": {
+      "name": "Municipal Election",
+      "date": "2018-10-22",
+      "dataFormat": "dominion_rcr",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "rcr": "1 Mayor.rcr"
+          }
+        },
+        {
+          "office": "cw01",
+          "loaderParams": {
+            "rcr": "2 Councillor Ward 1.rcr"
+          }
+        },
+        {
+          "office": "cw02",
+          "loaderParams": {
+            "rcr": "3 Councillor Ward 2.rcr"
+          }
+        },
+        {
+          "office": "cw03",
+          "loaderParams": {
+            "rcr": "4 Councillor Ward 3.rcr"
+          }
+        },
+        {
+          "office": "cw04",
+          "loaderParams": {
+            "rcr": "5 Councillor Ward 4.rcr"
+          }
+        },
+        {
+          "office": "cw05",
+          "loaderParams": {
+            "rcr": "7 Councillor Ward 5.rcr"
+          }
+        },
+        {
+          "office": "cw06",
+          "loaderParams": {
+            "rcr": "8 Councillor Ward 6.rcr"
+          }
+        },
+        {
+          "office": "cw07",
+          "loaderParams": {
+            "rcr": "9 Councillor Ward 7.rcr"
+          }
+        },
+        {
+          "office": "cw08",
+          "loaderParams": {
+            "rcr": "10 Councillor Ward 8.rcr"
+          }
+        },
+        {
+          "office": "cw09",
+          "loaderParams": {
+            "rcr": "11 Councillor Ward 9.rcr"
+          }
+        },
+        {
+          "office": "cw10",
+          "loaderParams": {
+            "rcr": "12 Councillor Ward 10.rcr"
+          }
+        },
+        {
+          "office": "cw11",
+          "loaderParams": {
+            "rcr": "13 Councillor Ward 11.rcr"
+          }
+        },
+        {
+          "office": "cw12",
+          "loaderParams": {
+            "rcr": "14 Councillor Ward 12.rcr"
+          }
+        },
+        {
+          "office": "cw13",
+          "loaderParams": {
+            "rcr": "15 Councillor Ward 13.rcr"
+          }
+        },
+        {
+          "office": "cw14",
+          "loaderParams": {
+            "rcr": "16 Councillor Ward 14.rcr"
+          }
+        }
+      ],
+      "files": {
+        "1 Mayor.rcr": "ab08045ab98339113d505456f94152a3c6667d77",
+        "10 Councillor Ward 8.rcr": "8bff34eb98b6a3c294610150ad34ec7034deb7e1",
+        "11 Councillor Ward 9.rcr": "d4d2852374287dbf6cf7e2cbf260ef082092c281",
+        "12 Councillor Ward 10.rcr": "25f9a9ff54fe7c54d1c013b14acf06b4a7243fa5",
+        "13 Councillor Ward 11.rcr": "14291e68667f8a773e6aa79e781035799ec02c4a",
+        "14 Councillor Ward 12.rcr": "30e60a7e49669b5945b0beccecb3f822ab1c3b45",
+        "15 Councillor Ward 13.rcr": "54a4f523e8e4a6fb435e8917a8ba296ea7b4c263",
+        "16 Councillor Ward 14.rcr": "46d8c74a0df763425cf6f8cc39ce897d7632f06a",
+        "2 Councillor Ward 1.rcr": "028fe86fc5903a1e782793dc436c649fedb646d7",
+        "3 Councillor Ward 2.rcr": "0f0f988fdc5ddcdf025cae99084a5f8e5f68939a",
+        "4 Councillor Ward 3.rcr": "0ce2d8efd6cd49d85deb11dac985d082f1cbd66d",
+        "5 Councillor Ward 4.rcr": "33d1315ded54838e8fd7fc055a446bb66b09606b",
+        "7 Councillor Ward 5.rcr": "3861f23e25aae653ca41dc05a87bb55db2e7ba7d",
+        "8 Councillor Ward 6.rcr": "37d722c3bf426ceac8720267585196d8bca1b4ea",
+        "9 Councillor Ward 7.rcr": "b9d5576a18dc0dd8377a10929dac9439e1ab45e7"
+      },
+      "website": null
+    }
+  }
+}

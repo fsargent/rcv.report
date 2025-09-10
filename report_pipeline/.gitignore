@@ -1,9 +1,4 @@
 /target
-raw-data/**/*.xls
-raw-data/**/*.xlsx
-raw-data/**/*.csv
-raw-data/**/*.json
+raw-data/
 preprocessed
-reports
-election-metadata
 .idea

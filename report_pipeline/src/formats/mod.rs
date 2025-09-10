@@ -4,7 +4,7 @@ mod nist_sp_1500;
 mod simple_json;
 mod us_ca_sfo;
 mod us_me;
-mod us_ny_nyc;
+pub mod us_ny_nyc;
 mod us_vt_btv;
 
 use crate::model::election::Election;

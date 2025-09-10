@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            INSERT INTO jurisdictions (path, name, kind)\n            VALUES (?, ?, ?)\n            ON CONFLICT(path) DO UPDATE SET\n                name = excluded.name,\n                kind = excluded.kind\n            RETURNING id\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      }
+    ],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "b2a6005f32372a8448aef4f2739e61d86a94b687d0026f28a3e6d7871f88ae8d"
+}

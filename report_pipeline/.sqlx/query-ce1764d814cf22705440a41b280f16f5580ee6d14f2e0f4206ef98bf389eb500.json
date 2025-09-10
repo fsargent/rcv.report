@@ -1,0 +1,38 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT path, jurisdiction_name, election_name, date\n            FROM election_index\n            ORDER BY date DESC\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "path",
+        "ordinal": 0,
+        "type_info": "Text"
+      },
+      {
+        "name": "jurisdiction_name",
+        "ordinal": 1,
+        "type_info": "Text"
+      },
+      {
+        "name": "election_name",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "date",
+        "ordinal": 3,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "ce1764d814cf22705440a41b280f16f5580ee6d14f2e0f4206ef98bf389eb500"
+}

@@ -48,25 +48,88 @@ This will:
 
 ## Usage
 
-### Processing Election Data
+### SQLite-Based Pipeline
 
-1. Download the raw ballot data from s3
+The pipeline eliminates manual configuration through automatic discovery:
 
-```bash
-./mount.sh
-```
-
-2. Sync raw data with metadata:
+#### 1. **Setup** (One-time)
 
 ```bash
-./sync.sh
+# Build the pipeline
+cargo build --release
+
+# Create database with schema
+sqlite3 ballots.db < migrations/001_initial_schema.sql
 ```
 
-3. Generate reports:
+#### 2. **Ingest Election Data**
 
 ```bash
-./report.sh
+# Automatically discover contests and import to SQLite database
+./target/release/ranked-vote ingest raw-data/us/ny/nyc/2025/07 ballots.db us/ny/nyc 2025/07
 ```
+
+**What this does:**
+- ✅ **Auto-discovers contests** from Excel files (no JSON metadata needed!)
+- ✅ **Imports all ballot data** with full referential integrity
+- ✅ **Tracks performance metrics** (ballots/second, processing time)
+- ✅ **Provides real-time progress** with colored output
+- ✅ **Enforces data constraints** (prevents duplicate ballots)
+
+**Example output:**
+```
+🚀 Starting SQLite ingestion for us/ny/nyc 2025/07
+📋 Discovered 1 contests
+✅ Database initialized: ballots.db
+🚀 Starting ingestion for us/ny/nyc 2025/07
+  📊 Processing contest: DEM Borough President - Manhattan
+    ✅ Processed 15,847 ballots for DEM Borough President - Manhattan
+🎉 Ingestion completed! Processed 15,847 ballots in 2.34 seconds
+```
+
+#### 3. **Query and Analyze Data**
+
+```bash
+# Connect to database
+sqlite3 ballots.db
+
+# Example queries
+.mode column
+.headers on
+
+-- Count total ballots
+SELECT COUNT(*) as total_ballots FROM ballots;
+
+-- Ballots per contest
+SELECT c.office_name, COUNT(*) as ballot_count 
+FROM contests c JOIN ballots b ON c.id = b.contest_id 
+GROUP BY c.id;
+
+-- Performance metrics
+SELECT stage, duration_ms, ballots_processed 
+FROM processing_metrics 
+ORDER BY created_at DESC;
+
+-- Top candidates by first-choice votes
+SELECT cand.name, COUNT(*) as first_choice_votes
+FROM ballot_choices bc
+JOIN candidates cand ON bc.candidate_id = cand.id
+WHERE bc.rank_position = 1 AND bc.choice_type = 'candidate'
+GROUP BY cand.id
+ORDER BY first_choice_votes DESC;
+```
+
+#### 4. **Supported Data Formats**
+
+Currently implemented:
+- **NYC (us_ny_nyc)**: Excel files with candidate mapping ✅
+
+Coming soon:
+- San Francisco (NIST SP 1500)
+- Maine (us_me)
+- Burlington, VT (us_vt_btv)
+- Dominion RCR
+- Simple JSON
 
 ## Adding Election Data
 
@@ -171,6 +234,71 @@ For format-specific requirements and examples, see the documentation for each su
 - Dominion RCR
 - NYC
 - Simple JSON
+
+## Troubleshooting
+
+### Common Issues
+
+**Database creation fails:**
+```bash
+# Ensure SQLite is installed
+sqlite3 --version
+
+# Create database manually
+sqlite3 ballots.db < migrations/001_initial_schema.sql
+```
+
+**Ingestion fails with "file not found":**
+```bash
+# Check file structure
+ls -la raw-data/us/ny/nyc/2025/07/
+
+# Ensure you have the candidate mapping file
+ls -la raw-data/us/ny/nyc/2025/07/*CandidacyID_To_Name.xlsx
+```
+
+**UNIQUE constraint errors:**
+- This is expected behavior when re-running ingestion
+- The database prevents duplicate ballot imports
+- Delete and recreate database to start fresh
+
+### Performance Analysis
+
+```sql
+-- Connect to database
+sqlite3 ballots.db
+
+-- View processing metrics
+SELECT 
+  stage,
+  duration_ms,
+  ballots_processed,
+  ROUND(ballots_processed * 1000.0 / duration_ms, 2) as ballots_per_second
+FROM processing_metrics 
+WHERE ballots_processed IS NOT NULL
+ORDER BY created_at;
+
+-- Database statistics
+SELECT 
+  'Total Ballots' as metric, COUNT(*) as count FROM ballots
+UNION ALL
+SELECT 'Total Candidates', COUNT(*) FROM candidates  
+UNION ALL
+SELECT 'Total Contests', COUNT(*) FROM contests;
+```
+
+### Advanced Usage
+
+**Custom database location:**
+```bash
+./target/release/ranked-vote ingest raw-data/path /custom/path/ballots.db jurisdiction election
+```
+
+**Performance tuning for large datasets:**
+```bash
+# Optimize SQLite settings
+sqlite3 ballots.db "PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL;"
+```
 
 ## License
 

@@ -1,0 +1,719 @@
+{
+  "name": "San Francisco",
+  "path": "us/ca/sfo",
+  "kind": "municipal",
+  "offices": {
+    "assessor": {
+      "name": "Assessor-Recorder"
+    },
+    "city-atty": {
+      "name": "City Attorney"
+    },
+    "da": {
+      "name": "District Attorney"
+    },
+    "defender": {
+      "name": "Public Defender"
+    },
+    "mayor": {
+      "name": "Mayor"
+    },
+    "sheriff": {
+      "name": "Sheriff"
+    },
+    "supervisor-d01": {
+      "name": "Board of Supervisors, District 1"
+    },
+    "supervisor-d02": {
+      "name": "Board of Supervisors, District 2"
+    },
+    "supervisor-d03": {
+      "name": "Board of Supervisors, District 3"
+    },
+    "supervisor-d04": {
+      "name": "Board of Supervisors, District 4"
+    },
+    "supervisor-d05": {
+      "name": "Board of Supervisors, District 5"
+    },
+    "supervisor-d06": {
+      "name": "Board of Supervisors, District 6"
+    },
+    "supervisor-d07": {
+      "name": "Board of Supervisors, District 7"
+    },
+    "supervisor-d08": {
+      "name": "Board of Supervisors, District 8"
+    },
+    "supervisor-d09": {
+      "name": "Board of Supervisors, District 9"
+    },
+    "supervisor-d10": {
+      "name": "Board of Supervisors, District 10"
+    },
+    "supervisor-d11": {
+      "name": "Board of Supervisors, District 11"
+    },
+    "treasurer": {
+      "name": "Treasurer"
+    }
+  },
+  "elections": {
+    "2008/11": {
+      "name": "Consolidated General Election",
+      "date": "2008-11-04",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d01",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "3",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d03",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "5",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d04",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "6",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "7",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d07",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "8",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d09",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "9",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        },
+        {
+          "office": "supervisor-d11",
+          "loaderParams": {
+            "ballotImage": "CityWide_Ballot_Image.txt",
+            "contest": "4",
+            "masterLookup": "CityWide_MasterLookup.txt",
+            "zipFile": "Nov08_RCV_CityWide_BallotImage_20081202.zip"
+          }
+        }
+      ],
+      "files": {
+        "Nov08_RCV_CityWide_BallotImage_20081202.zip": "9db466fc92eedc743f4672f624b080f824379089"
+      },
+      "website": "https://sfelections.sfgov.org/election-summary-november-4-2008"
+    },
+    "2010/11": {
+      "name": "Consolidated General Election",
+      "date": "2010-11-02",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d02",
+          "loaderParams": {
+            "ballotImage": "BallotImage-D2.txt",
+            "contest": "7",
+            "masterLookup": "MasterLookup-D2.txt",
+            "zipFile": "D2.zip"
+          }
+        },
+        {
+          "office": "supervisor-d06",
+          "loaderParams": {
+            "ballotImage": "BallotImage-D6.txt",
+            "contest": "9",
+            "masterLookup": "MasterLookup-D6.txt",
+            "zipFile": "D6.zip"
+          }
+        },
+        {
+          "office": "supervisor-d08",
+          "loaderParams": {
+            "ballotImage": "BallotImage-D8.txt",
+            "contest": "10",
+            "masterLookup": "MasterLookup-D8.txt",
+            "zipFile": "D8.zip"
+          }
+        },
+        {
+          "office": "supervisor-d10",
+          "loaderParams": {
+            "ballotImage": "BallotImage-D10.txt",
+            "contest": "6",
+            "masterLookup": "MasterLookup-D10.txt",
+            "zipFile": "D10.zip"
+          }
+        }
+      ],
+      "files": {
+        "D10.zip": "a054002a9555d5e461a1f8afc95dd9e320eeb5f6",
+        "D2.zip": "ab3b02f524f211a662543bbb976a36daba6badd8",
+        "D6.zip": "7615e78ee95f23eda7a3694b42eeb3478c674366",
+        "D8.zip": "75c39c1eafd6fe91a47d5472d566e1707bbcbab3"
+      },
+      "website": "https://sfelections.org/results/20101102/"
+    },
+    "2011/11": {
+      "name": "Consolidated Municipal Election",
+      "date": "2011-11-08",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "da",
+          "loaderParams": {
+            "ballotImage": "DA-BallotImage.txt",
+            "contest": "1",
+            "masterLookup": "DA-MasterLookUp.txt",
+            "zipFile": "DA.zip"
+          }
+        },
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "ballotImage": "Mayor-BallotImage.txt",
+            "contest": "3",
+            "masterLookup": "Mayor-MasterLookup.txt",
+            "zipFile": "Mayor.zip"
+          }
+        },
+        {
+          "office": "sheriff",
+          "loaderParams": {
+            "ballotImage": "Sheriff-BallotImage.txt",
+            "contest": "2",
+            "masterLookup": "Sheriff-MasterLookUp.txt",
+            "zipFile": "Sheriff.zip"
+          }
+        }
+      ],
+      "files": {
+        "DA.zip": "dcf512c7e6204e7f121275c45ef66f734a62dc1c",
+        "Mayor.zip": "521a061ded9337a971037144cc6a80655e47f885",
+        "Sheriff.zip": "1cf3d7b1ec0dc7c6e7fa2d7adb09dad9aaab9566"
+      },
+      "website": "https://sfelections.org/results/20111108/"
+    },
+    "2012/11": {
+      "name": "Consolidated General Election",
+      "date": "2012-11-06",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "ballotImage": "D5-BallotImage.txt",
+            "contest": "22",
+            "masterLookup": "D5-MasterLookup.txt",
+            "zipFile": "D5.zip"
+          }
+        },
+        {
+          "office": "supervisor-d07",
+          "loaderParams": {
+            "ballotImage": "D7-BallotImage.txt",
+            "contest": "23",
+            "masterLookup": "D7-MasterLookup.txt",
+            "zipFile": "D7.zip"
+          }
+        }
+      ],
+      "files": {
+        "D5.zip": "feee735b1bb405bf69e0e1a52ace630f4e27369c",
+        "D7.zip": "02b7bbddda09f716d00380c6922778ada248717a"
+      },
+      "website": "https://sfelections.org/results/20121106/index.php#english_detail"
+    },
+    "2014/11": {
+      "name": "Consolidated General Election",
+      "date": "2014-11-04",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d10",
+          "loaderParams": {
+            "ballotImage": "D10_BallotImage.txt",
+            "contest": "33",
+            "masterLookup": "D10_MasterLookup.txt",
+            "zipFile": "D10.zip"
+          }
+        }
+      ],
+      "files": {
+        "D10.zip": "8e902269c9646c863ca5839560b26060fa7fa884"
+      },
+      "website": "https://www.sfelections.org/results/20141104/#english_detail"
+    },
+    "2015/11": {
+      "name": "Consolidated Municipal Election",
+      "date": "2015-11-03",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "ballotImage": "20151119_ballotimage.txt",
+            "contest": "1",
+            "masterLookup": "20151119_masterlookup.txt"
+          }
+        },
+        {
+          "office": "sheriff",
+          "loaderParams": {
+            "ballotImage": "20151119_ballotimage.txt",
+            "contest": "2",
+            "masterLookup": "20151119_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d03",
+          "loaderParams": {
+            "ballotImage": "20151119_ballotimage.txt",
+            "contest": "3",
+            "masterLookup": "20151119_masterlookup.txt"
+          }
+        }
+      ],
+      "files": {
+        "20151119_ballotimage.txt": "8f5079df4267c4c23c3432ff71ce148dc483f30a",
+        "20151119_masterlookup.txt": "32444f136a2aacecb740d70ecc02b99c9b0102fc"
+      },
+      "website": "https://sfelections.org/results/20151103/#english_detail"
+    },
+    "2016/11": {
+      "name": "Consolidated General Election",
+      "date": "2016-11-08",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d01",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "9",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d03",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "10",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "11",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d07",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "12",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d09",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "13",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d11",
+          "loaderParams": {
+            "ballotImage": "20161206_ballotimage.txt",
+            "contest": "14",
+            "masterLookup": "20161206_masterlookup.txt"
+          }
+        }
+      ],
+      "files": {
+        "20161206_ballotimage.txt": "ff12479964e24b73aee8cc6e8fa68400361c971c",
+        "20161206_masterlookup.txt": "c1128b1b6a7319da871cad0a2a2429db64c8ed70",
+        "20161206_turnout.txt": "f47e0464807eb96a374d92b5bee942badd1af65d"
+      },
+      "website": "https://sfelections.sfgov.org/november-8-2016-election-results-detailed-reports"
+    },
+    "2018/06": {
+      "name": "Consolidated Statewide Primary Election",
+      "date": "2018-06-05",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "ballotImage": "20180627_ballotimage.txt",
+            "contest": "20",
+            "masterLookup": "20180627_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d08",
+          "loaderParams": {
+            "ballotImage": "20180627_ballotimage.txt",
+            "contest": "21",
+            "masterLookup": "20180627_masterlookup.txt"
+          }
+        }
+      ],
+      "files": {
+        "20180627_ballotimage.txt": "9544df621e257046b94e011dcb1a95bdb0148143",
+        "20180627_masterlookup.txt": "030176016a69434bcc4353a502fbe0935bea3a0e",
+        "20180627_sha512.csv": "eed96a5a5e2a0171f39258c3a51b9a63b2d1264f"
+      },
+      "website": "https://sfelections.sfgov.org/june-5-2018-election-results-detailed-reports"
+    },
+    "2018/11": {
+      "name": "General Election",
+      "date": "2018-11-06",
+      "dataFormat": "us_ca_sfo",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "assessor",
+          "loaderParams": {
+            "ballotImage": "20181127_assessor_ballotimage.txt",
+            "contest": "29",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "defender",
+          "loaderParams": {
+            "ballotImage": "20181127_defender_ballotimage.txt",
+            "contest": "32",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d02",
+          "loaderParams": {
+            "ballotImage": "20181127_d2_ballotimage.txt",
+            "contest": "35",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d04",
+          "loaderParams": {
+            "ballotImage": "20181127_d4_ballotimage.txt",
+            "contest": "36",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d06",
+          "loaderParams": {
+            "ballotImage": "20181127_d6_ballotimage.txt",
+            "contest": "37",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d08",
+          "loaderParams": {
+            "ballotImage": "20181127_d8_ballotimage.txt",
+            "contest": "38",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        },
+        {
+          "office": "supervisor-d10",
+          "loaderParams": {
+            "ballotImage": "20181127_d10_ballotimage.txt",
+            "contest": "39",
+            "masterLookup": "20181127_masterlookup.txt"
+          }
+        }
+      ],
+      "files": {
+        "20181127_assessor_ballotimage.txt": "61d1f9e2df0c9e239f85a609487d912b77f92c43",
+        "20181127_d10_ballotimage.txt": "9f1177357c1b3be1a861ea496343b4cecc181250",
+        "20181127_d2_ballotimage.txt": "128cb76858fdc17fce3683613715b5a1428f36a8",
+        "20181127_d4_ballotimage.txt": "bbfe748c18b6c1b8b7ae108f266f1398d4e70377",
+        "20181127_d6_ballotimage.txt": "b749052240062e1e3b0f7102c963244ff74939fb",
+        "20181127_d8_ballotimage.txt": "00fc9d75d29a4fb80ba987763978f81218bd8cbe",
+        "20181127_defender_ballotimage.txt": "ba1b22adb8eabb95b3f6f6eb0d370794596ba0a6",
+        "20181127_masterlookup.txt": "a8e909a7cea653eea6ed3e450fa83cd41d0e11ed",
+        "20181127_sha512.csv": "858f6e0280e079a065711844b068470b71db2d69"
+      },
+      "website": "https://sfelections.sfgov.org/november-6-2018-election-results-detailed-reports"
+    },
+    "2019/11": {
+      "name": "Consolidated Municipal Election",
+      "date": "2019-11-05",
+      "dataFormat": "nist_sp_1500",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "contest": "334",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "contest": "353",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "city-atty",
+          "loaderParams": {
+            "contest": "352",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "da",
+          "loaderParams": {
+            "contest": "339",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "defender",
+          "loaderParams": {
+            "contest": "360",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "sheriff",
+          "loaderParams": {
+            "contest": "350",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "treasurer",
+          "loaderParams": {
+            "contest": "349",
+            "cvr": "CVR_Export_20191125163446.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        }
+      ],
+      "files": {
+        "CVR_Export_20191125163446.zip": "bcaae1c5f57a367af861cc267c5e252a7786049a"
+      },
+      "website": "https://sfelections.sfgov.org/november-5-2019-election-results-detailed-reports"
+    },
+    "2020/11": {
+      "name": "Consolidated General Election",
+      "date": "2020-11-03",
+      "dataFormat": "nist_sp_1500",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "supervisor-d01",
+          "loaderParams": {
+            "contest": "12",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d03",
+          "loaderParams": {
+            "contest": "13",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "contest": "14",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d07",
+          "loaderParams": {
+            "contest": "15",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d09",
+          "loaderParams": {
+            "contest": "16",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d11",
+          "loaderParams": {
+            "contest": "17",
+            "cvr": "CVR_Export_20201201091840.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        }
+      ],
+      "files": {
+        "CVR_Export_20201201091840.zip": "323d569c29478e35123d739ac8f84e6225ef2cda"
+      },
+      "website": "https://sfelections.sfgov.org/november-3-2020-election-results-summary"
+    },
+    "2024/11": {
+      "name": "Consolidated General Election",
+      "date": "2024-11-03",
+      "dataFormat": "nist_sp_1500",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "city-atty",
+          "loaderParams": {
+            "contest": "19",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "da",
+          "loaderParams": {
+            "contest": "21",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "sheriff",
+          "loaderParams": {
+            "contest": "22",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "contest": "18",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d01",
+          "loaderParams": {
+            "contest": "23",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d03",
+          "loaderParams": {
+            "contest": "24",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d05",
+          "loaderParams": {
+            "contest": "25",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d07",
+          "loaderParams": {
+            "contest": "26",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d09",
+          "loaderParams": {
+            "contest": "27",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        },
+        {
+          "office": "supervisor-d11",
+          "loaderParams": {
+            "contest": "28",
+            "cvr": "CVR_Export_20241202143051.zip",
+            "dropUnqualifiedWriteIn": "true"
+          }
+        }
+      ],
+      "files": {
+        "CVR_Export_20241202143051.zip": "abc753451fd791908b819de87b8765543445f0fc"
+      },
+      "website": "https://sfelections.org/results/20241105w/index.html"
+    }
+  }
+}

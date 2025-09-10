@@ -39,12 +39,32 @@ pub fn read_candidate_ids(workbook: &mut Sheets) -> HashMap<u32, String> {
     let sheet = workbook.worksheet_range(&first_sheet).unwrap().unwrap();
 
     let mut rows = sheet.rows();
-    rows.next();
-    for row in rows {
-        let id = row.get(0).unwrap().get_float().unwrap() as u32;
-        let name = row.get(1).unwrap().get_string().unwrap();
+    rows.next(); // Skip header row
 
-        candidates.insert(id, name.to_string());
+    for row in rows {
+        let id_cell = row.get(0);
+        let name_cell = row.get(1);
+
+        if let (Some(id_cell), Some(name_cell)) = (id_cell, name_cell) {
+            // Try to parse ID as float first, then as string if that fails
+            let id = if let Some(float_val) = id_cell.get_float() {
+                float_val as u32
+            } else if let Some(string_val) = id_cell.get_string() {
+                match string_val.parse::<u32>() {
+                    Ok(parsed_id) => parsed_id,
+                    Err(_) => continue, // Skip rows with non-numeric IDs
+                }
+            } else {
+                continue; // Skip rows where ID can't be read
+            };
+
+            let name = if let Some(name_str) = name_cell.get_string() {
+                name_str.to_string()
+            } else {
+                continue; // Skip rows where name can't be read
+            };
+            candidates.insert(id, name);
+        }
     }
 
     candidates

@@ -5,3 +5,7 @@ yarn-error.log
 /cypress/screenshots/
 /__sapper__/
 .env
+
+# Raw data compression artifacts
+/report_pipeline/raw-data-compressed.tar.xz
+/report_pipeline/raw-data-backup/

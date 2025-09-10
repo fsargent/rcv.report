@@ -28,17 +28,51 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install SQLite
+        run: sudo apt-get update && sudo apt-get install -y sqlite3
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Rust pipeline
+        run: |
+          cd report_pipeline
+          cargo build --release
+
+      - name: Generate reports database
+        run: |
+          cd report_pipeline
+          # Check if there's existing ballots data or create sample data
+          if [ -f "ballots.db" ]; then
+            echo "Using existing ballots.db"
+          else
+            echo "Creating sample reports database for static site"
+            sqlite3 reports.db < migrations/002_reports_schema.sql
+            # Insert sample data for static site generation
+            sqlite3 reports.db << 'EOF'
+            INSERT INTO election_index (path, jurisdiction_name, election_name, date) 
+            VALUES ('sample/election', 'Sample Jurisdiction', 'Sample Election', '2024-01-01');
+            INSERT INTO contest_summaries (election_path, office, office_name, name, winner, num_candidates, num_rounds, ballot_count)
+            VALUES ('sample/election', 'sample-office', 'Sample Office', 'Sample Office', 'Sample Winner', 3, 2, 1000);
+            INSERT INTO contest_reports (path, election_path, office, report_json, ballot_count, winner)
+            VALUES ('sample/election/sample-office', 'sample/election', 'sample-office', '{"info":{"name":"Sample Office","date":"2024-01-01","dataFormat":"sample","jurisdictionPath":"sample","electionPath":"election","office":"sample-office","officeName":"Sample Office","jurisdictionName":"Sample Jurisdiction","electionName":"Sample Election"},"ballotCount":1000,"candidates":[{"name":"Candidate A","candidate_type":"Regular"},{"name":"Candidate B","candidate_type":"Regular"},{"name":"Candidate C","candidate_type":"Regular"}],"results":[{"round":1,"tally":{"Candidate A":450,"Candidate B":350,"Candidate C":200},"eliminated":["Candidate C"]},{"round":2,"tally":{"Candidate A":520,"Candidate B":480},"eliminated":[]}],"summary":{"winner":"Candidate A","total_rounds":2,"total_ballots":1000}}', 1000, 'Candidate A');
+            EOF
+          fi
+
+      - name: Build static site
         env:
-          RANKED_VOTE_REPORTS: ${{ github.workspace }}/report_pipeline/reports
+          RANKED_VOTE_REPORTS_DB: ${{ github.workspace }}/report_pipeline/reports.db
         run: npm run build
 
       - name: Export static site
         env:
-          RANKED_VOTE_REPORTS: ${{ github.workspace }}/report_pipeline/reports
+          RANKED_VOTE_REPORTS_DB: ${{ github.workspace }}/report_pipeline/reports.db
         run: npm run export
 
       - name: Upload artifact

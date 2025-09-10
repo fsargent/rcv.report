@@ -1,0 +1,32 @@
+{
+  "name": "Burlington",
+  "path": "us/vt/btv",
+  "kind": "municipal",
+  "offices": {
+    "mayor": {
+      "name": "Mayor"
+    }
+  },
+  "elections": {
+    "2009/03": {
+      "name": "Mayoral Election",
+      "date": "2009-03-03",
+      "dataFormat": "us_vt_btv",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "archive": "2009 Mayor Reports.zip",
+            "ballots": "Reports/2009 Burlington Mayor Final Piles Report.txt"
+          }
+        }
+      ],
+      "files": {
+        "2009 Mayor Reports.zip": "6db59ff407060f286032dfdee66e71107e96f7b2"
+      },
+      "website": null
+    }
+  }
+}

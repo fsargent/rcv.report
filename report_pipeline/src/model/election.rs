@@ -42,7 +42,8 @@ impl<'de> Deserialize<'de> for CandidateId {
     }
 }
 
-#[derive(Ord, PartialOrd, Eq, PartialEq, Clone, Serialize, Deserialize, Debug)]
+#[derive(Ord, PartialOrd, Eq, PartialEq, Clone, Serialize, Deserialize, Debug, sqlx::Type)]
+#[sqlx(type_name = "TEXT", rename_all = "snake_case")]
 pub enum CandidateType {
     WriteIn,
     Regular,

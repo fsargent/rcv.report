@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT report_json\n            FROM contest_reports\n            WHERE path = ?\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "report_json",
+        "ordinal": 0,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "a70b3bb5e749431a586b4c2139fcec6bd3d22c1e801add1e5fcf826fe256ecb3"
+}

@@ -1,0 +1,20 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            INSERT INTO elections (jurisdiction_id, path, name, date, data_format)\n            VALUES (?, ?, ?, ?, ?)\n            ON CONFLICT(jurisdiction_id, path) DO UPDATE SET\n                name = excluded.name,\n                date = excluded.date,\n                data_format = excluded.data_format\n            RETURNING id\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id",
+        "ordinal": 0,
+        "type_info": "Int64"
+      }
+    ],
+    "parameters": {
+      "Right": 5
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "09e6e1fb9e895807359f90e473e3f2e234298abeb45da7f6b3f6ff715da691cc"
+}

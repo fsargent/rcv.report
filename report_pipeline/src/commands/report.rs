@@ -14,17 +14,39 @@ pub fn report(
     preprocessed_dir: &Path,
     force_preprocess: bool,
     force_report: bool,
+    jurisdiction_filter: Option<&str>,
+    election_filter: Option<&str>,
+    contest_filter: Option<&str>,
 ) {
     let raw_path = Path::new(raw_dir);
     let mut election_index_entries: Vec<ElectionIndexEntry> = Vec::new();
 
     for (_, jurisdiction) in read_meta(meta_dir) {
+        // Filter by jurisdiction if specified
+        if let Some(filter) = jurisdiction_filter {
+            if jurisdiction.path != filter {
+                continue;
+            }
+        }
+
         let raw_base = raw_path.join(jurisdiction.path.clone());
 
         for (election_path, election) in &jurisdiction.elections {
+            // Filter by election if specified
+            if let Some(filter) = election_filter {
+                if election_path != filter {
+                    continue;
+                }
+            }
             let mut contest_index_entries: Vec<ContestIndexEntry> = Vec::new();
             eprintln!("Election: {}", election_path.red());
             for contest in &election.contests {
+                // Filter by contest if specified
+                if let Some(filter) = contest_filter {
+                    if contest.office != filter {
+                        continue;
+                    }
+                }
                 let office = jurisdiction
                     .offices
                     .get(&contest.office)

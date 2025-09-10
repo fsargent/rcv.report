@@ -9,17 +9,22 @@
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "build:sqlite": "RANKED_VOTE_REPORTS_DB=reports.db npm run build",
+    "start:sqlite": "RANKED_VOTE_REPORTS_DB=reports.db npm run start"
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^5.0.2",
     "@tsconfig/svelte": "^1.0.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^11.10.0",
     "compression": "^1.7.1",
     "polka": "next",
     "sirv": "^0.4.0",
     "svelte-check": "^0.1.56",
     "svelte-preprocess": "^4.0.8",
     "tippy.js": "^6.2.6",
+    "ts-node": "^10.9.2",
     "tslib": "^2.0.0",
     "typescript": "^3.9.7"
   },

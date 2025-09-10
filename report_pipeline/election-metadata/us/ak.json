@@ -1,0 +1,32 @@
+{
+  "name": "Alaska",
+  "path": "us/ak",
+  "kind": "state",
+  "offices": {
+    "cd": {
+      "name": "At-large Congressional District"
+    }
+  },
+  "elections": {
+    "2022/08": {
+      "name": "Special Election",
+      "date": "2022-08-16",
+      "dataFormat": "nist_sp_1500",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "cd",
+          "loaderParams": {
+            "contest": "69",
+            "cvr": "CVR_Export_20220908084311.zip"
+          }
+        }
+      ],
+      "files": {
+        "CVR_Export_20220908084311.zip": "d34f7f56304966b3aefdf690e4bcfc2c02ef1ef2"
+      },
+      "website": "https://www.elections.alaska.gov/results/22SPECPRIM/index.php"
+    }
+  }
+}

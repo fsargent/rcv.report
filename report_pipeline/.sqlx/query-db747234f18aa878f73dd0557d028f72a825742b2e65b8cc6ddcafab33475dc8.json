@@ -1,0 +1,44 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            SELECT id as \"id!\", contest_id as \"contest_id!\", external_id, name, candidate_type as \"candidate_type: CandidateType\"\n            FROM candidates\n            WHERE contest_id = ?\n            ORDER BY name\n            ",
+  "describe": {
+    "columns": [
+      {
+        "name": "id!",
+        "ordinal": 0,
+        "type_info": "Int64"
+      },
+      {
+        "name": "contest_id!",
+        "ordinal": 1,
+        "type_info": "Int64"
+      },
+      {
+        "name": "external_id",
+        "ordinal": 2,
+        "type_info": "Text"
+      },
+      {
+        "name": "name",
+        "ordinal": 3,
+        "type_info": "Text"
+      },
+      {
+        "name": "candidate_type: CandidateType",
+        "ordinal": 4,
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      true,
+      false,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "db747234f18aa878f73dd0557d028f72a825742b2e65b8cc6ddcafab33475dc8"
+}
