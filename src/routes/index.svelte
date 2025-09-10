@@ -30,9 +30,11 @@
     </p>
 
     <p>
-      <strong>rcv.report</strong> is a project of
-      <a href="https://paulbutler.org/">Paul Butler</a>.
-      For more information, see <a href="/about">the about page</a>.
+      rcv.report is a fork of ranked.vote which was created by
+      <a href="https://paulbutler.org">Paul Butler</a>.
+      rcv.report is maintained by
+      <a href="https://github.com/fsargent">Felix Sargent</a>.
+      It is non-partisan and has received no outside funding.
     </p>
   </div>
 

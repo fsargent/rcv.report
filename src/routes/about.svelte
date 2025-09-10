@@ -22,8 +22,10 @@
 </p>
 
 <p>
-  rcv.report was created and is maintained by
+  rcv.report is a fork of ranked.vote which was created by
   <a href="https://paulbutler.org">Paul Butler</a>.
+  rcv.report is maintained by
+  <a href="https://github.com/fsargent">Felix Sargent</a>.
   It is non-partisan and has received no outside funding.
 </p>
 
@@ -31,15 +33,13 @@
 
 <p>
   This website and the data pipeline behind it (including the tabulator) are
-  <a href="https://github.com/ranked-vote">open source</a> and liberally licensed. Website content and generated reports may
+  <a href="https://github.com/fsargent/rcv.report">open source</a> and liberally licensed. Website content and generated reports may
   be freely distributed with attribution under the <a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a> license.
 </p>
 
 <h2>Colophon</h2>
 
 <p>
-  The <a href="https://github.com/ranked-vote/ranked-vote">data pipeline</a> for rcv.report was written in <a href="https://www.rust-lang.org/">Rust</a>. This website, including
-  visualizations, was created with Sapper and <a href="https://svelte.dev/">Svelte</a>, and is hosted on <a href="https://www.netlify.com/">Netlify</a>.
   The font is <a href="https://github.com/adobe-fonts/source-sans-pro">Source Sans Pro</a>.
 </p>
 </div>

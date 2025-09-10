@@ -33,12 +33,12 @@ jobs:
 
       - name: Build
         env:
-          RANKED_VOTE_REPORTS: ${{ github.workspace }}/reports
+          RANKED_VOTE_REPORTS: ${{ github.workspace }}/report_pipeline/reports
         run: npm run build
 
       - name: Export static site
         env:
-          RANKED_VOTE_REPORTS: ${{ github.workspace }}/reports
+          RANKED_VOTE_REPORTS: ${{ github.workspace }}/report_pipeline/reports
         run: npm run export
 
       - name: Upload artifact

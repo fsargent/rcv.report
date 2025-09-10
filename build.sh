@@ -1,4 +1,4 @@
 #!/bin/sh
 
-RANKED_VOTE_REPORTS="reports" npm run export
+RANKED_VOTE_REPORTS="report_pipeline/reports" npm run export
 
