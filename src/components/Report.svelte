@@ -95,7 +95,7 @@
     {:else}
       <p>
         No Condorcet winner; multiple candidates form the
-        <a href="https://en.wikipedia.org/wiki/Smith_set">Smith set</a>:
+        <a href="https://en.wikipedia.org/wiki/Condorcet_paradox">Condorcet cycle</a>:
         {report.smithSet.map(getCandidateNameById).join(", ")}
         .
       </p>

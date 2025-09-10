@@ -25,6 +25,7 @@ The app reads report data from `report_pipeline/reports` via the `RANKED_VOTE_RE
 - `npm run dev`: start Sapper dev server
 - `npm run build`: build the app (legacy enabled)
 - `npm run export`: export a static site to `__sapper__/export`
+- `npm run generate-share-images`: generate Twitter/Facebook share images (requires dev server running)
 - `./dev.sh`: run dev with `RANKED_VOTE_REPORTS="report_pipeline/reports"`
 - `./build.sh`: export with `RANKED_VOTE_REPORTS` set (for local static output)
 

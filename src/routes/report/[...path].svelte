@@ -13,17 +13,21 @@
   export let report;
   export let path;
   import Report from "../../components/Report.svelte";
+  const canonical = `https://rcv.report/report/${path.join('/')}`;
 </script>
 
 <svelte:head>
   <title>rcv.report: {report.info.jurisdictionName} / {report.info.name} / {report.info.date.substr(0, 4)}</title>
 
   <meta property="og:title" content="{report.info.jurisdictionName} / {report.info.name}" />
-  <meta property="og:image" content={"https://r.moxy.social/ykZcSLKZUq/ranked/fb.png/" + path.join("/")} />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:creator" content="@paulgb" />
-  <meta property="twitter:title" content="{report.info.jurisdictionName} / {report.info.name}" />
-  <meta property="twitter:image" content={"https://r.moxy.social/ykZcSLKZUq/ranked/twitter.png/" + path.join("/")} />
+  <meta property="og:image" content={"/share/" + path.join("/") + ".png"} />
+  <meta property="og:url" content={canonical} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@paulgb" />
+  <meta name="twitter:title" content="{report.info.jurisdictionName} / {report.info.name}" />
+  <meta name="twitter:image" content={"/share/" + path.join("/") + ".png"} />
+  <meta name="twitter:url" content={canonical} />
 </svelte:head>
 
 <div class="wide container">
