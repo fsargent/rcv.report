@@ -14,23 +14,23 @@
   export let elections;
 </script>
 
-<title>ranked.vote: detailed reports on ranked-choice elections.</title>
+<title>rcv.report: detailed reports on ranked-choice elections.</title>
 
 <div class="wide container">
 <div class="row">
   <div class="leftCol">
     <div class="description">
-      <h1>ranked.vote</h1>:
+      <h1>rcv.report</h1>:
       detailed reports on ranked-choice elections.
     </div>
     <p>
       Ranked-choice elections produce more data on voter preferences than
-      pick-one elections. <strong>ranked.vote</strong> runs analysis on the
+      pick-one elections. <strong>rcv.report</strong> runs analysis on the
       ballot-level data and publishes reports on each election.
     </p>
 
     <p>
-      <strong>ranked.vote</strong> is a project of
+      <strong>rcv.report</strong> is a project of
       <a href="https://paulbutler.org/">Paul Butler</a>.
       For more information, see <a href="/about">the about page</a>.
     </p>
