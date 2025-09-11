@@ -1,24 +1,28 @@
-<script type="ts">
-  import type {
-    IContestReport,
-    Allocatee,
-    ICandidate,
-    ICandidatePairEntry,
-  } from "../report_types";
+<script>
   import VoteCounts from "./report_components/VoteCounts.svelte";
   import Sankey from "./report_components/Sankey.svelte";
-  import CandidatePairTable from "./report_components/CandidatePairTable.svelte";
+  // import CandidatePairTable from "./report_components/CandidatePairTable.svelte";
   import { EXHAUSTED } from "./candidates";
 
   import { onMount, setContext } from "svelte";
 
-  export let report: IContestReport;
+  export let report;
 
-  function getCandidate(cid: Allocatee): ICandidate {
+  // Add null safety for report data
+  $: candidates = report?.candidates || {};
+  $: reportInfo = report?.info || {};
+  $: rounds = report?.rounds || [];
+  $: candidatesArray = report?.candidates || [];
+  $: numCandidates = report?.numCandidates || 0;
+  $: winner = report?.winner || '';
+  $: condorcet = report?.condorcet || '';
+  $: ballotCount = report?.ballotCount || 0;
+
+  function getCandidate(cid) {
     if (cid == "X") {
       return { name: "Exhausted", writeIn: false };
     } else {
-      return report.candidates[cid];
+      return candidates[cid] || { name: "Unknown", writeIn: false };
     }
   }
 
@@ -26,7 +30,7 @@
     getCandidate,
   });
 
-  function formatDate(dateStr: string): string {
+  function formatDate(dateStr) {
     let date = new Date(dateStr);
     const months = [
       "January",
@@ -72,27 +76,29 @@
       {/if}
       was held on
       <strong>{formatDate(report.info.date)}</strong>.
-      <strong>{getCandidate(report.winner).name}</strong>
+      <strong>{getCandidate(winner).name}</strong>
       was the winner out of
-      <strong>{report.numCandidates}</strong>&nbsp;{#if report.numCandidates == 1}candidate {:else}candidates {/if}{#if report.rounds.length > 1}after
-        {" "}<strong>{report.rounds.length - 1}</strong>&nbsp;elimination {#if report.rounds.length == 2}round{:else}rounds{/if}.
+      <strong>{numCandidates}</strong>&nbsp;{#if numCandidates == 1}candidate {:else}candidates {/if}{#if rounds.length > 1}after
+        {" "}<strong>{rounds.length - 1}</strong>&nbsp;elimination {#if rounds.length == 2}round{:else}rounds{/if}.
       {:else}. No elimination rounds were necessary to determine the outcome.
       {/if}
     </p>
     <p>
-      {#if report.winner == report.condorcet}
-        <strong>{getCandidate(report.winner).name}</strong> was also the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
-      {:else}
-        <strong>{getCandidate(report.condorcet).name}</strong> was the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
+      {#if winner && condorcet}
+        {#if winner == condorcet}
+          <strong>{getCandidate(winner).name}</strong> was also the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
+        {:else}
+          <strong>{getCandidate(condorcet).name}</strong> was the <a href="https://en.wikipedia.org/wiki/Condorcet_method">Condorcet winner</a>.
+        {/if}
       {/if}
     </p>
   </div>
   <div class="rightCol">
-    <VoteCounts candidateVotes={report.totalVotes} />
+    <VoteCounts candidateVotes={report.totalVotes || []} />
   </div>
 </div>
 
-{#if report.rounds.length > 1}
+{#if rounds.length > 1}
   <div class="row">
     <div class="leftCol">
       <h2>Runoff Rounds</h2>
@@ -110,12 +116,12 @@
     </div>
 
     <div class="rightCol">
-      <Sankey rounds={report.rounds} />
+      <Sankey rounds={rounds} />
     </div>
   </div>
 {/if}
 
-{#if report.numCandidates > 1}
+{#if false && numCandidates > 1 && report.pairwisePreferences}
 <div class="row">
   <div class="leftCol">
     <h2>Pairwise Preferences</h2>
@@ -129,16 +135,20 @@
   </div>
 
   <div class="rightCol">
-    <CandidatePairTable
-      data={report.pairwisePreferences}
-      rowLabel="Preferred Candidate"
-      colLabel="Less-preferred Candidate"
-      generateTooltip={(row, col, entry) => `
-        Of the <strong>${entry.denominator.toLocaleString()}</strong> voters
-        who expressed a preference, <strong>${Math.round(entry.frac * 1000) / 10}%</strong>
-        (<strong>${entry.numerator.toLocaleString()}</strong>) preferred
-        <strong>${getCandidate(row).name}</strong> to <strong>${getCandidate(col).name}</strong>.
-      `} />
+    {#if false && report.pairwisePreferences && report.pairwisePreferences.entries}
+      <CandidatePairTable
+        data={report.pairwisePreferences}
+        rowLabel="Preferred Candidate"
+        colLabel="Less-preferred Candidate"
+        generateTooltip={(row, col, entry) => `
+          Of the <strong>${entry.denominator.toLocaleString()}</strong> voters
+          who expressed a preference, <strong>${Math.round(entry.frac * 1000) / 10}%</strong>
+          (<strong>${entry.numerator.toLocaleString()}</strong>) preferred
+          <strong>${getCandidate(row).name}</strong> to <strong>${getCandidate(col).name}</strong>.
+        `} />
+    {:else}
+      <p><em>Pairwise preference analysis not available for this election.</em></p>
+    {/if}
   </div>
 </div>
 
@@ -152,27 +162,31 @@
   </div>
 
   <div class="rightCol">
-    <CandidatePairTable
-      generateTooltip={(row, col, entry) => (col !== EXHAUSTED ? `
-        Of the <strong>${entry.denominator.toLocaleString()}</strong> voters who chose <strong>${getCandidate(row).name}</strong>
-        as their first choice, <strong>${entry.numerator.toLocaleString()}</strong>
-        (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
-        chose <strong>${getCandidate(col).name}</strong>
-        as their second choice.
-        ` : `
-        Of the <strong>${entry.denominator.toLocaleString()}</strong> voters who chose <strong>${getCandidate(row).name}</strong>
-        as their first choice, <strong>${entry.numerator.toLocaleString()}</strong>
-        (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
-        did not rank another candidate.
-       `)}
-      data={report.firstAlternate}
-      rowLabel="First Choice"
-      colLabel="Second Choice" />
+    {#if false && report.firstAlternate && report.firstAlternate.entries}
+      <CandidatePairTable
+        generateTooltip={(row, col, entry) => (col !== EXHAUSTED ? `
+          Of the <strong>${entry.denominator.toLocaleString()}</strong> voters who chose <strong>${getCandidate(row).name}</strong>
+          as their first choice, <strong>${entry.numerator.toLocaleString()}</strong>
+          (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
+          chose <strong>${getCandidate(col).name}</strong>
+          as their second choice.
+          ` : `
+          Of the <strong>${entry.denominator.toLocaleString()}</strong> voters who chose <strong>${getCandidate(row).name}</strong>
+          as their first choice, <strong>${entry.numerator.toLocaleString()}</strong>
+          (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
+          did not rank another candidate.
+         `)}
+        data={report.firstAlternate}
+        rowLabel="First Choice"
+        colLabel="Second Choice" />
+    {:else}
+      <p><em>First alternate analysis not available for this election.</em></p>
+    {/if}
   </div>
 </div>
 {/if}
 
-{#if report.rounds.length > 1}
+{#if rounds.length > 1}
   <div class="row">
     <div class="leftCol">
       <h2>Final Vote by First Choice</h2>
@@ -183,22 +197,26 @@
     </div>
 
     <div class="rightCol">
-      <CandidatePairTable
-        generateTooltip={(row, col, entry) => (col !== EXHAUSTED ? `
-        Of the <strong>${entry.denominator.toLocaleString()}</strong> ballots that ranked <strong>${getCandidate(row).name}</strong>
-        first, <strong>${entry.numerator.toLocaleString()}</strong>
-        (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
-        were allocated to <strong>${getCandidate(col).name}</strong>
-        in the final round.
-        ` : `
-        Of the <strong>${entry.denominator.toLocaleString()}</strong> ballots that ranked <strong>${getCandidate(row).name}</strong>
-        first, <strong>${entry.numerator.toLocaleString()}</strong>
-        (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
-        were exhausted by the final round.
-        `)}
-        data={report.firstFinal}
-        rowLabel="First Round Choice"
-        colLabel="Final Round Choice" />
+      {#if false && report.firstFinal && report.firstFinal.entries}
+        <CandidatePairTable
+          generateTooltip={(row, col, entry) => (col !== EXHAUSTED ? `
+          Of the <strong>${entry.denominator.toLocaleString()}</strong> ballots that ranked <strong>${getCandidate(row).name}</strong>
+          first, <strong>${entry.numerator.toLocaleString()}</strong>
+          (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
+          were allocated to <strong>${getCandidate(col).name}</strong>
+          in the final round.
+          ` : `
+          Of the <strong>${entry.denominator.toLocaleString()}</strong> ballots that ranked <strong>${getCandidate(row).name}</strong>
+          first, <strong>${entry.numerator.toLocaleString()}</strong>
+          (<strong>${Math.round(entry.frac * 1000) / 10}%</strong>)
+          were exhausted by the final round.
+          `)}
+          data={report.firstFinal}
+          rowLabel="First Round Choice"
+          colLabel="Final Round Choice" />
+      {:else}
+        <p><em>First-final ranking analysis not available for this election.</em></p>
+      {/if}
     </div>
   </div>
 {/if}

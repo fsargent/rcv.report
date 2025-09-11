@@ -2,19 +2,21 @@
   "name": "TODO",
   "description": "TODO",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
-    "start": "node __sapper__/build",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run",
-    "build:sqlite": "RANKED_VOTE_REPORTS_DB=reports.db npm run build",
-    "start:sqlite": "RANKED_VOTE_REPORTS_DB=reports.db npm run start"
+    "test": "run-p --race dev cy:run"
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^5.0.2",
+    "@sveltejs/adapter-static": "^2.0.3",
+    "@sveltejs/kit": "^1.30.4",
+    "@sveltejs/vite-plugin-svelte": "^2.5.3",
     "@tsconfig/svelte": "^1.0.3",
     "@types/better-sqlite3": "^7.6.13",
     "better-sqlite3": "^11.10.0",
@@ -26,7 +28,8 @@
     "tippy.js": "^6.2.6",
     "ts-node": "^10.9.2",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "vite": "^4.5.14"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -42,7 +45,6 @@
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^5.3.0",
-    "sapper": "^0.27.0",
-    "svelte": "^3.0.0"
+    "svelte": "^4.2.20"
   }
 }

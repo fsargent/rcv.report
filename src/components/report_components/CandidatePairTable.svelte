@@ -1,33 +1,24 @@
-<script type="ts">
-  import type {
-    ICandidatePairTable,
-    ICandidatePairEntry,
-    Allocatee,
-  } from "../../report_types";
-  import type { CandidateContext } from "../candidates";
+<script>
   import { getContext } from "svelte";
   import tooltip from "../../tooltip";
 
-  export let data: ICandidatePairTable;
-  export let rowLabel: string;
-  export let colLabel: string;
-  export let generateTooltip: (
-    c1: Allocatee,
-    c2: Allocatee,
-    entry: ICandidatePairEntry
-  ) => string;
+  export let data;
+  export let rowLabel;
+  export let colLabel;
+export let generateTooltip;
+  const { getCandidate } = getContext("candidates");
 
-  const { getCandidate } = getContext("candidates") as CandidateContext;
-
-  function smooth(low: number, high: number, frac: number): number {
+  function smooth(low, high, frac) {
     return low * (1 - frac) + high * frac;
   }
 
-  let maxFrac = Math.max(
-    ...data.entries.map((row) => Math.max(...row.map((d) => (d ? d.frac : 0))))
-  );
+  // Add null safety for data.entries
+  $: safeEntries = data?.entries || [];
+  $: maxFrac = safeEntries.length > 0 
+    ? Math.max(...safeEntries.map((row) => Math.max(...row.map((d) => (d ? d.frac : 0)))))
+    : 1;
 
-  function fracToColor(frac: number): string {
+  function fracToColor(frac) {
     frac = frac / maxFrac;
     let h = smooth(0, 0, frac);
     let s = smooth(50, 95, frac);
@@ -40,18 +31,18 @@
 <style>
   table {
     font-size: 8pt;
-    margin: auto;
-    cursor: default;
+    margin: 0;
+    cursor: pointer;
   }
 
   .colLabel div {
     transform: rotate(180deg);
-    writing-mode: vertical-lr;
-    margin: auto;
+    writing-mode: lr;
+    margin: 0;
   }
 
   .colLabel {
-    vertical-align: bottom;
+    vertical-align: top;
   }
 
   .rowLabel {
@@ -62,13 +53,13 @@
     height: 40px;
     width: 40px;
     font-size: 8pt;
-    vertical-align: middle;
-    text-align: center;
-    color: black;
+    vertical-align: top;
+    text-align: right;
+    color: #333;
   }
 
   .colsLabel {
-    text-align: center;
+    text-align: right;
     font-size: 10pt;
     font-weight: bold;
     padding-bottom: 20px;
@@ -82,7 +73,7 @@
 
   .rowsLabel div {
     transform: rotate(180deg);
-    writing-mode: vertical-lr;
+    writing-mode: lr;
   }
 </style>
 
@@ -106,9 +97,9 @@
         <td class="rowLabel">{getCandidate(row).name}</td>
         {#each data.entries[i] as entry, j}
           <td
-            use:tooltip={(generateTooltip && entry) ? generateTooltip(row, data.cols[j], entry) : null}
+            use:tooltip={(generateTooltip && entry) ? generateTooltip(row, data.cols[j], entry) : ""}
             class="entry"
-            style={entry ? `background: ${fracToColor(entry.frac)}` : null}>
+            style={entry ? `background: ${fracToColor(entry.frac)}` : ""}>
             {#if entry}{Math.round(entry.frac * 1000) / 10}%{/if}
           </td>
         {/each}

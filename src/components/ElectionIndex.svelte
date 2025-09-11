@@ -1,9 +1,7 @@
-<script type="ts">
-  import type { IElectionIndexEntry } from "../report_types";
+<script>
+  export let elections;
 
-  export let elections: IElectionIndexEntry[];
-
-  let electionsByYear = new Map<string, IElectionIndexEntry[]>();
+  let electionsByYear = new Map();
 
   elections.forEach((e) => {
     let year = e.date.substr(0, 4);

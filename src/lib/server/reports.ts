@@ -1,4 +1,4 @@
-import * as Database from 'better-sqlite3';
+import Database from 'better-sqlite3';
 import type { IReportIndex, IContestReport } from "./report_types";
 
 const { RANKED_VOTE_REPORTS_DB } = process.env;
@@ -64,13 +64,30 @@ export function getIndex(): IReportIndex {
 export function getReport(path: string): IContestReport {
     const database = getDatabase();
     
-    const reportQuery = database.prepare(`
+    // Try exact match first
+    let reportQuery = database.prepare(`
         SELECT report_json
         FROM contest_reports
         WHERE path = ?
     `);
     
-    const row = reportQuery.get(path) as { report_json: string } | undefined;
+    let row = reportQuery.get(path) as { report_json: string } | undefined;
+    
+    // If not found, try with jurisdiction prefix
+    if (!row) {
+        const fullPath = `us/ny/nyc/${path}`;
+        row = reportQuery.get(fullPath) as { report_json: string } | undefined;
+    }
+    
+    // If still not found, try pattern matching
+    if (!row) {
+        reportQuery = database.prepare(`
+            SELECT report_json
+            FROM contest_reports
+            WHERE path LIKE ?
+        `);
+        row = reportQuery.get(`%${path}`) as { report_json: string } | undefined;
+    }
     
     if (!row) {
         throw new Error(`Report not found for path: ${path}`);

@@ -1,17 +1,14 @@
-<script type="ts">
-  import type {
-    ITabulatorRound,
-    Allocatee,
-    CandidateId,
-  } from "../../report_types";
-  import type { CandidateContext } from "../candidates";
+<script>
   import { EXHAUSTED } from "../candidates";
   import { getContext } from "svelte";
   import tooltip from "../../tooltip";
 
-  export let rounds: ITabulatorRound[];
+  export let rounds;
+  
+  // Add null safety for rounds
+  $: safeRounds = rounds || [];
 
-  const { getCandidate } = getContext("candidates") as CandidateContext;
+  const { getCandidate } = getContext("candidates");
 
   const outerHeight = 24;
   const width = 600;
@@ -20,35 +17,36 @@
   const edgeMargin = 60;
 
   const candidateMargin = 20; // px
-  const firstRoundAllocations = rounds[0].allocations;
-  const firstRoundNumCandidates = firstRoundAllocations.length - 1;
-  const voteScale =
-    (width - candidateMargin * firstRoundNumCandidates - edgeMargin - 10) /
-    firstRoundAllocations.reduce((a, b) => a + b.votes, 0);
+  $: firstRoundAllocations = safeRounds[0]?.allocations || [];
+  $: firstRoundNumCandidates = Math.max(0, firstRoundAllocations.length - 1);
+  $: voteScale = firstRoundAllocations.length > 0
+    ? (width - candidateMargin * firstRoundNumCandidates - edgeMargin - 10) /
+      firstRoundAllocations.reduce((a, b) => a + (b.votes || 0), 0)
+    : 1;
 
-  const innerHeight = roundHeight * (rounds.length - 1) + voteBlockHeight;
+  $: innerHeight = safeRounds.length > 0 ? roundHeight * Math.max(0, safeRounds.length - 1) + voteBlockHeight : voteBlockHeight;
   const labelSpace = 100;
-  const height = 2 * labelSpace + innerHeight;
+  $: height = 2 * labelSpace + innerHeight;
 
   class VoteBlock {
     constructor(
-      public x: number,
-      public width: number,
-      public y: number,
-      private allocatee: Allocatee,
-      private votes: number,
-      private round: number
+      x,
+      width,
+      y,
+      allocatee,
+      votes,
+      round
     ) {}
 
-    isExhausted(): boolean {
+    isExhausted() {
       return this.allocatee === EXHAUSTED;
     }
 
-    label(): string {
+    label() {
       return getCandidate(this.allocatee).name;
     }
 
-    tooltip(): string {
+    tooltip() {
       if (this.isExhausted()) {
         return `
         <strong>${this.votes.toLocaleString()}</strong> votes
@@ -65,18 +63,18 @@
 
   class TransferBlock {
     constructor(
-      private fromCandidate: Allocatee,
-      private toCandidate: Allocatee,
-      private votes: number,
-      private round: number,
-      private r1x: number,
-      private r2x: number,
-      private width: number,
-      private r1y: number,
-      private r2y: number
+      fromCandidate,
+      toCandidate,
+      votes,
+      round,
+      r1x,
+      r2x,
+      width,
+      r1y,
+      r2y
     ) {}
 
-    toPath(): string {
+    toPath() {
       let midY = (this.r1y + this.r2y) / 2;
       let width = Math.max(1, this.width);
       let { r1y, r2y, r1x, r2x } = this;
@@ -93,7 +91,7 @@
         `;
     }
 
-    tooltip(): string {
+    tooltip() {
       if (this.fromCandidate === EXHAUSTED) {
         return `<strong>${this.votes.toLocaleString()}</strong> exhausted votes
         carried over into round <strong>${this.round}</strong>`;
@@ -116,25 +114,19 @@
     }
   }
 
-  let transfers: TransferBlock[] = [];
+  let transfers = [];
 
-  interface CandidateState {
-    xOffset: number;
-    width: number;
-    votes: number;
-    accountedIn: number;
-    accountedOut: number;
-  }
 
-  let lastVotes: Map<Allocatee, CandidateState> = new Map();
 
-  let voteBlockRows: VoteBlock[][] = rounds.map((round, i) => {
-    let voteBlocks: VoteBlock[] = [];
-    let curVotes: Map<Allocatee, CandidateState> = new Map();
-    let numCandidates = round.allocations.length - 1;
+  let lastVotes = new Map(); // Initialize lastVotes outside the map function
+  
+  $: voteBlockRows = safeRounds.map((round, i) => {
+      let voteBlocks = [];
+      let numCandidates = Math.max(0, (round.allocations || []).length - 1);
     let offset =
       (firstRoundNumCandidates - numCandidates) * (candidateMargin / 2);
-    for (let allocation of round.allocations) {
+    let curVotes = new Map(); // Initialize curVotes for this round
+      for (let allocation of (round.allocations || [])) {
       let width = voteScale * allocation.votes;
       voteBlocks.push(
         new VoteBlock(
@@ -157,7 +149,7 @@
             last.votes,
             i + 1,
             last.xOffset,
-            allocation.allocatee === "X" ? offset + width - last.width : offset,
+            allocation.allocatee === "X" ? offset + width - last.width :
             last.width,
             (i - 1) * roundHeight + voteBlockHeight,
             i * roundHeight
@@ -170,8 +162,8 @@
       }
 
       curVotes.set(allocation.allocatee, {
-        xOffset: offset,
-        votes: allocation.votes,
+        xOffset,
+        votes,
         width,
         accountedIn,
         accountedOut: 0,
@@ -223,7 +215,7 @@
   .transfer {
     fill: #444;
     opacity: 0.2;
-    mix-blend-mode: exclusion;
+    mix-blend-mode: multiply;
   }
 </style>
 

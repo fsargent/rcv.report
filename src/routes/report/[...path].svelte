@@ -1,18 +1,9 @@
-<script context="module">
-  export async function preload(page, session) {
-    let {path} = page.params;
-    let result = await this.fetch(`/api/${path.join('/')}/report.json`);
-    let report = await result.json();
-    return {report, path};
-  }
-</script>
-
 <script>
-  // TODO: this could be a TS script once this Sapper issue is closed:
-  // https://github.com/sveltejs/sapper/pull/1222
-  export let report;
-  export let path;
-  import Report from "../../components/Report.svelte";
+  import Report from "../../../components/Report.svelte";
+  import type { PageData } from './$types';
+
+  export let data: PageData;
+  $: ({ report, path } = data);
 </script>
 
 <svelte:head>
