@@ -1,0 +1,23 @@
+{
+  "name": "report_pipeline",
+  "version": "1.0.0",
+  "description": "A system for processing and analyzing ranked-choice voting (RCV) election data. This repository contains:",
+  "main": "populate_reports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.0",
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "progress": "^2.0.3",
+    "xlsx": "^0.18.5",
+    "xlsx-stream-reader": "^1.1.1",
+    "yauzl": "^3.2.0"
+  }
+}

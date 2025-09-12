@@ -228,37 +228,71 @@ async fn ingest_election(
     Ok(())
 }
 
-/// Discover contests for ingestion (enhanced version of existing discover)
+/// Discover contests for ingestion using Python script
 fn discover_contests_for_ingestion(
-    _raw_path: &std::path::Path,
+    raw_path: &std::path::Path,
 ) -> Result<Vec<crate::database::ingestion::DiscoveredContest>, Box<dyn std::error::Error>> {
     use crate::database::ingestion::DiscoveredContest;
     use std::collections::BTreeMap;
+    use std::process::Command;
 
-    // For NYC format, reuse the existing discovery logic but return our format
-    let mut contests = Vec::new();
+    println!("🔍 Discovering all NYC contests using Python script...");
 
-    // This is a simplified version - in practice, we'd enhance the existing discover command
-    // to return structured data instead of writing JSON files
+    // Run the Python discovery script
+    let output = Command::new("python3")
+        .arg("discover_contests.py")
+        .arg(raw_path.to_str().unwrap())
+        .current_dir(std::env::current_dir()?)
+        .output()?;
+
+    if !output.status.success() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        return Err(format!("Python discovery script failed: {}", stderr).into());
+    }
+
+    let stdout = String::from_utf8_lossy(&output.stdout);
     
-    // For now, create a sample contest for testing
-    let mut loader_params = BTreeMap::new();
-    loader_params.insert("candidatesFile".to_string(), "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx".to_string());
-    loader_params.insert("cvrPattern".to_string(), "2025P1V.+\\.xlsx".to_string());
-    loader_params.insert("jurisdictionName".to_string(), "Citywide".to_string());
-    loader_params.insert("officeName".to_string(), "DEM Borough President - Manhattan".to_string());
+    // Parse JSON output
+    let discovery_result: serde_json::Value = serde_json::from_str(&stdout)?;
+    let contests_json = discovery_result["contests"].as_array()
+        .ok_or("Invalid JSON: missing contests array")?;
 
-    contests.push(DiscoveredContest {
-        office_id: "borough-president-manhattan".to_string(),
-        office_name: "DEM Borough President - Manhattan".to_string(),
-        jurisdiction_name: Some("Manhattan".to_string()),
-        jurisdiction_code: Some("026918".to_string()),
-        data_format: "us_ny_nyc".to_string(),
-        loader_params,
-    });
+    let mut contests = Vec::new();
+    
+    for contest_json in contests_json {
+        let office_id = contest_json["office_id"].as_str()
+            .ok_or("Missing office_id")?.to_string();
+        let office_name = contest_json["office_name"].as_str()
+            .ok_or("Missing office_name")?.to_string();
+        let jurisdiction_name = contest_json["jurisdiction_name"].as_str().map(|s| s.to_string());
+        let jurisdiction_code = contest_json["jurisdiction_code"].as_str().map(|s| s.to_string());
+        
+        // Convert loader_params from JSON to BTreeMap
+        let loader_params_json = &contest_json["loader_params"];
+        let mut loader_params = BTreeMap::new();
+        
+        if let Some(obj) = loader_params_json.as_object() {
+            for (key, value) in obj {
+                if let Some(str_value) = value.as_str() {
+                    loader_params.insert(key.clone(), str_value.to_string());
+                }
+            }
+        }
 
+        contests.push(DiscoveredContest {
+            office_id,
+            office_name,
+            jurisdiction_name,
+            jurisdiction_code,
+            data_format: "us_ny_nyc".to_string(),
+            loader_params,
+        });
+    }
+
+    println!("✅ Discovered {} unique contests", contests.len());
     Ok(contests)
 }
+
 
 /// Generate reports database from ballots database
 async fn generate_reports(

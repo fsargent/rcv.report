@@ -274,16 +274,28 @@ impl BallotIngester {
                 CandidateType::QualifiedWriteIn => "qualified_write_in",
             };
 
-            let candidate_id = sqlx::query!(
+            // Try to insert candidate, ignore if exists
+            sqlx::query!(
                 r#"
-                INSERT INTO candidates (contest_id, external_id, name, candidate_type)
+                INSERT OR IGNORE INTO candidates (contest_id, external_id, name, candidate_type)
                 VALUES (?, ?, ?, ?)
-                RETURNING id
                 "#,
                 contest_id,
                 external_id,
                 candidate.name,
                 candidate_type_str
+            )
+            .execute(&mut *tx)
+            .await?;
+
+            // Get the candidate ID (whether newly inserted or existing)
+            let candidate_id = sqlx::query!(
+                r#"
+                SELECT id FROM candidates 
+                WHERE contest_id = ? AND external_id = ?
+                "#,
+                contest_id,
+                external_id
             )
             .fetch_one(&mut *tx)
             .await?
@@ -298,12 +310,23 @@ impl BallotIngester {
 
         for batch in election.ballots.chunks(batch_size) {
             for ballot in batch {
-                // Insert ballot
+                // Insert ballot (ignore duplicates)
+                sqlx::query!(
+                    r#"
+                    INSERT OR IGNORE INTO ballots (contest_id, ballot_id)
+                    VALUES (?, ?)
+                    "#,
+                    contest_id,
+                    ballot.id
+                )
+                .execute(&mut *tx)
+                .await?;
+
+                // Get the ballot ID (whether newly inserted or existing)
                 let ballot_db_id = sqlx::query!(
                     r#"
-                    INSERT INTO ballots (contest_id, ballot_id)
-                    VALUES (?, ?)
-                    RETURNING id
+                    SELECT id FROM ballots 
+                    WHERE contest_id = ? AND ballot_id = ?
                     "#,
                     contest_id,
                     ballot.id
@@ -328,7 +351,7 @@ impl BallotIngester {
 
                     sqlx::query!(
                         r#"
-                        INSERT INTO ballot_choices (ballot_id, rank_position, choice_type, candidate_id)
+                        INSERT OR IGNORE INTO ballot_choices (ballot_id, rank_position, choice_type, candidate_id)
                         VALUES (?, ?, ?, ?)
                         "#,
                         ballot_db_id,
