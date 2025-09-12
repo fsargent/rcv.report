@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P1V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "1st Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 325335,
+  "ballotCount": 24595,
   "candidates": [
     {
       "name": "Christopher Marte",
@@ -68,10 +68,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 300790
+          "votes": 50
         }
       ],
-      "undervote": 300740,
+      "undervote": 0,
       "overvote": 50,
       "continuingBallots": 24545,
       "transfers": []
@@ -92,10 +92,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 301914
+          "votes": 1174
         }
       ],
-      "undervote": 301861,
+      "undervote": 1121,
       "overvote": 53,
       "continuingBallots": 23421,
       "transfers": [
@@ -153,10 +153,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 303369
+          "votes": 2629
         }
       ],
-      "undervote": 303311,
+      "undervote": 2571,
       "overvote": 58,
       "continuingBallots": 21966,
       "transfers": [

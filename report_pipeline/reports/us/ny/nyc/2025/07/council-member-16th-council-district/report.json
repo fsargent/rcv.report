@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "16th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 10240,
   "candidates": [
     {
       "name": "Althea V. Stevens",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 107723
+          "votes": 25
         }
       ],
-      "undervote": 107698,
+      "undervote": 0,
       "overvote": 25,
       "continuingBallots": 10215,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 107799
+          "votes": 101
         }
       ],
-      "undervote": 107773,
+      "undervote": 75,
       "overvote": 26,
       "continuingBallots": 10139,
       "transfers": [

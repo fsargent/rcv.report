@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "17th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 9328,
   "candidates": [
     {
       "name": "Antirson R. Ortiz",
@@ -68,10 +68,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 108658
+          "votes": 48
         }
       ],
-      "undervote": 108610,
+      "undervote": 0,
       "overvote": 48,
       "continuingBallots": 9280,
       "transfers": []
@@ -92,10 +92,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 109560
+          "votes": 950
         }
       ],
-      "undervote": 109511,
+      "undervote": 901,
       "overvote": 49,
       "continuingBallots": 8378,
       "transfers": [
@@ -153,10 +153,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 110633
+          "votes": 2023
         }
       ],
-      "undervote": 110578,
+      "undervote": 1968,
       "overvote": 55,
       "continuingBallots": 7305,
       "transfers": [

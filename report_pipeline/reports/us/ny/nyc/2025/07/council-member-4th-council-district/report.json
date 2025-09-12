@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P1V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "4th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 325335,
+  "ballotCount": 29723,
   "candidates": [
     {
       "name": "Virginia Maloney",
@@ -84,10 +84,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 295729
+          "votes": 117
         }
       ],
-      "undervote": 295612,
+      "undervote": 0,
       "overvote": 117,
       "continuingBallots": 29606,
       "transfers": []
@@ -112,10 +112,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 296513
+          "votes": 901
         }
       ],
-      "undervote": 296390,
+      "undervote": 778,
       "overvote": 123,
       "continuingBallots": 28822,
       "transfers": [
@@ -212,10 +212,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 297905
+          "votes": 2293
         }
       ],
-      "undervote": 297772,
+      "undervote": 2160,
       "overvote": 133,
       "continuingBallots": 27430,
       "transfers": [
@@ -253,10 +253,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 300765
+          "votes": 5153
         }
       ],
-      "undervote": 300603,
+      "undervote": 4991,
       "overvote": 162,
       "continuingBallots": 24570,
       "transfers": [

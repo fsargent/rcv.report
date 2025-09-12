@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P4V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "21st Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 238248,
+  "ballotCount": 7875,
   "candidates": [
     {
       "name": "Erycka Montoya",
@@ -68,10 +68,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 230415
+          "votes": 42
         }
       ],
-      "undervote": 230373,
+      "undervote": 0,
       "overvote": 42,
       "continuingBallots": 7833,
       "transfers": []
@@ -92,10 +92,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 231275
+          "votes": 902
         }
       ],
-      "undervote": 231225,
+      "undervote": 852,
       "overvote": 50,
       "continuingBallots": 6973,
       "transfers": [
@@ -153,10 +153,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 232380
+          "votes": 2007
         }
       ],
-      "undervote": 232330,
+      "undervote": 1957,
       "overvote": 50,
       "continuingBallots": 5868,
       "transfers": [

@@ -5,6 +5,105 @@
   "offices": {
     "mayor-primary-dem": {
       "name": "Mayor Nominee (Dem)"
+    },
+    "mayor": {
+      "name": "DEM Mayor"
+    },
+    "comptroller": {
+      "name": "DEM Comptroller"
+    },
+    "public-advocate": {
+      "name": "DEM Public Advocate"
+    },
+    "borough-president-bronx": {
+      "name": "DEM Borough President - Bronx"
+    },
+    "borough-president-brooklyn": {
+      "name": "DEM Borough President - Brooklyn"
+    },
+    "borough-president-manhattan": {
+      "name": "DEM Borough President - Manhattan"
+    },
+    "council-member-1st-council-district": {
+      "name": "DEM Council Member - 1st Council District"
+    },
+    "council-member-2nd-council-district": {
+      "name": "DEM Council Member - 2nd Council District"
+    },
+    "council-member-3rd-council-district": {
+      "name": "DEM Council Member - 3rd Council District"
+    },
+    "council-member-4th-council-district": {
+      "name": "DEM Council Member - 4th Council District"
+    },
+    "council-member-5th-council-district": {
+      "name": "DEM Council Member - 5th Council District"
+    },
+    "council-member-7th-council-district": {
+      "name": "DEM Council Member - 7th Council District"
+    },
+    "council-member-8th-council-district": {
+      "name": "DEM Council Member - 8th Council District"
+    },
+    "council-member-10th-council-district": {
+      "name": "DEM Council Member - 10th Council District"
+    },
+    "council-member-11th-council-district": {
+      "name": "DEM Council Member - 11th Council District"
+    },
+    "council-member-12th-council-district": {
+      "name": "DEM Council Member - 12th Council District"
+    },
+    "council-member-13th-council-district": {
+      "name": "DEM Council Member - 13th Council District"
+    },
+    "council-member-14th-council-district": {
+      "name": "DEM Council Member - 14th Council District"
+    },
+    "council-member-16th-council-district": {
+      "name": "DEM Council Member - 16th Council District"
+    },
+    "council-member-17th-council-district": {
+      "name": "DEM Council Member - 17th Council District"
+    },
+    "council-member-19th-council-district": {
+      "name": "DEM Council Member - 19th Council District"
+    },
+    "council-member-21st-council-district": {
+      "name": "DEM Council Member - 21st Council District"
+    },
+    "council-member-25th-council-district": {
+      "name": "DEM Council Member - 25th Council District"
+    },
+    "council-member-28th-council-district": {
+      "name": "DEM Council Member - 28th Council District"
+    },
+    "council-member-30th-council-district": {
+      "name": "DEM Council Member - 30th Council District"
+    },
+    "council-member-33rd-council-district": {
+      "name": "DEM Council Member - 33rd Council District"
+    },
+    "council-member-35th-council-district": {
+      "name": "DEM Council Member - 35th Council District"
+    },
+    "council-member-36th-council-district": {
+      "name": "DEM Council Member - 36th Council District"
+    },
+    "council-member-38th-council-district": {
+      "name": "DEM Council Member - 38th Council District"
+    },
+    "council-member-39th-council-district": {
+      "name": "DEM Council Member - 39th Council District"
+    },
+    "council-member-41st-council-district": {
+      "name": "DEM Council Member - 41st Council District"
+    },
+    "council-member-46th-council-district": {
+      "name": "DEM Council Member - 46th Council District"
+    },
+    "council-member-47th-council-district": {
+      "name": "DEM Council Member - 47th Council District"
     }
   },
   "elections": {
@@ -54,6 +153,316 @@
         "2021P_CandidacyID_To_Name.xlsx": "210db9a877b0710d77f5770ea27529915aba90df"
       },
       "website": "https://vote.nyc/page/election-results-summary#p0"
+    },
+    "2025/07": {
+      "name": "Primary Election",
+      "date": "2025-06-24",
+      "dataFormat": "us_ny_nyc",
+      "tabulationOptions": {
+        "eager": true
+      },
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Citywide",
+            "officeName": "DEM Mayor"
+          }
+        },
+        {
+          "office": "comptroller",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Citywide",
+            "officeName": "DEM Comptroller"
+          }
+        },
+        {
+          "office": "public-advocate",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Citywide",
+            "officeName": "DEM Public Advocate"
+          }
+        },
+        {
+          "office": "borough-president-bronx",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Bronx",
+            "officeName": "DEM Borough President"
+          }
+        },
+        {
+          "office": "borough-president-brooklyn",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Brooklyn",
+            "officeName": "DEM Borough President"
+          }
+        },
+        {
+          "office": "borough-president-manhattan",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "Manhattan",
+            "officeName": "DEM Borough President"
+          }
+        },
+        {
+          "office": "council-member-1st-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "1st Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-2nd-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "2nd Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-3rd-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "3rd Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-4th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "4th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-5th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "5th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-7th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "7th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-8th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "8th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-10th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "10th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-11th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "11th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-12th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "12th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-13th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "13th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-14th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "14th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-16th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "16th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-17th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "17th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-19th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "19th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-21st-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "21st Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-25th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "25th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-28th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "28th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-30th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "30th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-33rd-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "33rd Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-35th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "35th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-36th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "36th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-38th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "38th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-39th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "39th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-41st-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "41st Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-46th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "46th Council District",
+            "officeName": "DEM Council Member"
+          }
+        },
+        {
+          "office": "council-member-47th-council-district",
+          "loaderParams": {
+            "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
+            "cvrPattern": "2025P\\d?V.+\\.xlsx",
+            "jurisdictionName": "47th Council District",
+            "officeName": "DEM Council Member"
+          }
+        }
+      ],
+      "files": {},
+      "website": null
     }
   }
 }

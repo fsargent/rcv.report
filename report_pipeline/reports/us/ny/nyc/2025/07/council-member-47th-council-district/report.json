@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "47th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 13269,
   "candidates": [
     {
       "name": "Kayla Santosuosso",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 383349
+          "votes": 27
         }
       ],
-      "undervote": 383322,
+      "undervote": 0,
       "overvote": 27,
       "continuingBallots": 13242,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 383420
+          "votes": 98
         }
       ],
-      "undervote": 383391,
+      "undervote": 69,
       "overvote": 29,
       "continuingBallots": 13171,
       "transfers": [

@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "33rd Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 34166,
   "candidates": [
     {
       "name": "Sabrina N. Gates",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 362451
+          "votes": 26
         }
       ],
-      "undervote": 362425,
+      "undervote": 0,
       "overvote": 26,
       "continuingBallots": 34140,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 362589
+          "votes": 164
         }
       ],
-      "undervote": 362563,
+      "undervote": 138,
       "overvote": 26,
       "continuingBallots": 34002,
       "transfers": [

@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P4V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "30th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 238248,
+  "ballotCount": 12827,
   "candidates": [
     {
       "name": "Dermot P. Smyth",
@@ -60,10 +60,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 225444
+          "votes": 23
         }
       ],
-      "undervote": 225421,
+      "undervote": 0,
       "overvote": 23,
       "continuingBallots": 12804,
       "transfers": []
@@ -84,10 +84,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 225545
+          "votes": 124
         }
       ],
-      "undervote": 225522,
+      "undervote": 101,
       "overvote": 23,
       "continuingBallots": 12703,
       "transfers": [
@@ -125,10 +125,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 227466
+          "votes": 2045
         }
       ],
-      "undervote": 227440,
+      "undervote": 2019,
       "overvote": 26,
       "continuingBallots": 10782,
       "transfers": [

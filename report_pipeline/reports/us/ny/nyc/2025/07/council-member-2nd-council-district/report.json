@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P1V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "2nd Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 325335,
+  "ballotCount": 30369,
   "candidates": [
     {
       "name": "Sarah Batchu",
@@ -76,10 +76,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 295078
+          "votes": 112
         }
       ],
-      "undervote": 294966,
+      "undervote": 0,
       "overvote": 112,
       "continuingBallots": 30257,
       "transfers": []
@@ -100,10 +100,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 297543
+          "votes": 2577
         }
       ],
-      "undervote": 297421,
+      "undervote": 2455,
       "overvote": 122,
       "continuingBallots": 27792,
       "transfers": [
@@ -181,10 +181,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 299450
+          "votes": 4484
         }
       ],
-      "undervote": 299310,
+      "undervote": 4344,
       "overvote": 140,
       "continuingBallots": 25885,
       "transfers": [

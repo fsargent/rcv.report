@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "39th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 46593,
   "candidates": [
     {
       "name": "Shahana K. Hanif",
@@ -60,10 +60,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 350074
+          "votes": 76
         }
       ],
-      "undervote": 349998,
+      "undervote": 0,
       "overvote": 76,
       "continuingBallots": 46517,
       "transfers": []
@@ -80,10 +80,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 350953
+          "votes": 955
         }
       ],
-      "undervote": 350871,
+      "undervote": 873,
       "overvote": 82,
       "continuingBallots": 45638,
       "transfers": [

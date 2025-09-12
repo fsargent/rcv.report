@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P4V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "25th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 238248,
+  "ballotCount": 14855,
   "candidates": [
     {
       "name": "Shekar Krishnan",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 223417
+          "votes": 24
         }
       ],
-      "undervote": 223393,
+      "undervote": 0,
       "overvote": 24,
       "continuingBallots": 14831,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 223491
+          "votes": 98
         }
       ],
-      "undervote": 223466,
+      "undervote": 73,
       "overvote": 25,
       "continuingBallots": 14757,
       "transfers": [

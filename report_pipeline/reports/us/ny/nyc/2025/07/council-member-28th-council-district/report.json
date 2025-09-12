@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P4V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "28th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 238248,
+  "ballotCount": 14201,
   "candidates": [
     {
       "name": "Ty Hankerson",
@@ -76,10 +76,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 224116
+          "votes": 69
         }
       ],
-      "undervote": 224047,
+      "undervote": 0,
       "overvote": 69,
       "continuingBallots": 14132,
       "transfers": []
@@ -104,10 +104,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 224754
+          "votes": 707
         }
       ],
-      "undervote": 224680,
+      "undervote": 633,
       "overvote": 74,
       "continuingBallots": 13494,
       "transfers": [
@@ -179,10 +179,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 225836
+          "votes": 1789
         }
       ],
-      "undervote": 225756,
+      "undervote": 1709,
       "overvote": 80,
       "continuingBallots": 12412,
       "transfers": [
@@ -220,10 +220,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 227137
+          "votes": 3090
         }
       ],
-      "undervote": 227037,
+      "undervote": 2990,
       "overvote": 100,
       "continuingBallots": 11111,
       "transfers": [

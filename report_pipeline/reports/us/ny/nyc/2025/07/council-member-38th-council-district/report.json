@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "38th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 14349,
   "candidates": [
     {
       "name": "Alexa Aviles",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 382269
+          "votes": 27
         }
       ],
-      "undervote": 382242,
+      "undervote": 0,
       "overvote": 27,
       "continuingBallots": 14322,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 382326
+          "votes": 84
         }
       ],
-      "undervote": 382299,
+      "undervote": 57,
       "overvote": 27,
       "continuingBallots": 14265,
       "transfers": [

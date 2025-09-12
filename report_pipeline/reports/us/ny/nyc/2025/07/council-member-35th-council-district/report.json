@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "35th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 40578,
   "candidates": [
     {
       "name": "Crystal Hudson",
@@ -68,10 +68,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 356072
+          "votes": 59
         }
       ],
-      "undervote": 356013,
+      "undervote": 0,
       "overvote": 59,
       "continuingBallots": 40519,
       "transfers": []
@@ -88,10 +88,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 357374
+          "votes": 1361
         }
       ],
-      "undervote": 357306,
+      "undervote": 1293,
       "overvote": 68,
       "continuingBallots": 39217,
       "transfers": [

@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "12th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 18180,
   "candidates": [
     {
       "name": "Andy King",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 99814
+          "votes": 56
         }
       ],
-      "undervote": 99758,
+      "undervote": 0,
       "overvote": 56,
       "continuingBallots": 18124,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 99898
+          "votes": 140
         }
       ],
-      "undervote": 99841,
+      "undervote": 83,
       "overvote": 57,
       "continuingBallots": 18040,
       "transfers": [

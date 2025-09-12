@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "Bronx",
       "officeName": "DEM Borough President"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 105131,
   "candidates": [
     {
       "name": "Rafael Salamanca Jr.",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 13017
+          "votes": 210
         }
       ],
-      "undervote": 12807,
+      "undervote": 0,
       "overvote": 210,
       "continuingBallots": 104921,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 13396
+          "votes": 589
         }
       ],
-      "undervote": 13184,
+      "undervote": 377,
       "overvote": 212,
       "continuingBallots": 104542,
       "transfers": [

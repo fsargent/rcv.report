@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "11th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 19595,
   "candidates": [
     {
       "name": "Danielle Herbert-Guggenheim",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 98370
+          "votes": 27
         }
       ],
-      "undervote": 98343,
+      "undervote": 0,
       "overvote": 27,
       "continuingBallots": 19568,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 98453
+          "votes": 110
         }
       ],
-      "undervote": 98425,
+      "undervote": 82,
       "overvote": 28,
       "continuingBallots": 19485,
       "transfers": [

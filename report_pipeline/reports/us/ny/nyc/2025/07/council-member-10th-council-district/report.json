@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P1V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "10th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 325335,
+  "ballotCount": 23505,
   "candidates": [
     {
       "name": "Carmen N. De La Rosa",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 301862
+          "votes": 32
         }
       ],
-      "undervote": 301830,
+      "undervote": 0,
       "overvote": 32,
       "continuingBallots": 23473,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 301954
+          "votes": 124
         }
       ],
-      "undervote": 301922,
+      "undervote": 92,
       "overvote": 32,
       "continuingBallots": 23381,
       "transfers": [

@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P4V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "19th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 238248,
+  "ballotCount": 11590,
   "candidates": [
     {
       "name": "Benjamin Chou ",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 226673
+          "votes": 15
         }
       ],
-      "undervote": 226658,
+      "undervote": 0,
       "overvote": 15,
       "continuingBallots": 11575,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 226725
+          "votes": 67
         }
       ],
-      "undervote": 226710,
+      "undervote": 52,
       "overvote": 15,
       "continuingBallots": 11523,
       "transfers": [

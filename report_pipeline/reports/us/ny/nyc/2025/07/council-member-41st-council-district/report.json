@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "41st Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 16380,
   "candidates": [
     {
       "name": "Bianca Cunningham",
@@ -100,10 +100,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 380317
+          "votes": 106
         }
       ],
-      "undervote": 380211,
+      "undervote": 0,
       "overvote": 106,
       "continuingBallots": 16274,
       "transfers": []
@@ -140,10 +140,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 380438
+          "votes": 227
         }
       ],
-      "undervote": 380329,
+      "undervote": 118,
       "overvote": 109,
       "continuingBallots": 16153,
       "transfers": [
@@ -257,10 +257,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 380659
+          "votes": 448
         }
       ],
-      "undervote": 380546,
+      "undervote": 335,
       "overvote": 113,
       "continuingBallots": 15932,
       "transfers": [
@@ -321,10 +321,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 381351
+          "votes": 1140
         }
       ],
-      "undervote": 381230,
+      "undervote": 1019,
       "overvote": 121,
       "continuingBallots": 15240,
       "transfers": [
@@ -396,10 +396,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 382386
+          "votes": 2175
         }
       ],
-      "undervote": 382258,
+      "undervote": 2047,
       "overvote": 128,
       "continuingBallots": 14205,
       "transfers": [
@@ -437,10 +437,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 383915
+          "votes": 3704
         }
       ],
-      "undervote": 383771,
+      "undervote": 3560,
       "overvote": 144,
       "continuingBallots": 12676,
       "transfers": [

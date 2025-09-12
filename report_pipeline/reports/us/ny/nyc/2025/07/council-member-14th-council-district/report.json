@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P2V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "14th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 117938,
+  "ballotCount": 10216,
   "candidates": [
     {
       "name": "Bryan Hodge Vasquez",
@@ -60,10 +60,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 107808
+          "votes": 86
         }
       ],
-      "undervote": 107722,
+      "undervote": 0,
       "overvote": 86,
       "continuingBallots": 10130,
       "transfers": []
@@ -80,10 +80,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 108440
+          "votes": 718
         }
       ],
-      "undervote": 108350,
+      "undervote": 628,
       "overvote": 90,
       "continuingBallots": 9498,
       "transfers": [

@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P1V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "7th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 325335,
+  "ballotCount": 33277,
   "candidates": [
     {
       "name": "Shaun Abreu",
@@ -60,10 +60,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 292118
+          "votes": 60
         }
       ],
-      "undervote": 292058,
+      "undervote": 0,
       "overvote": 60,
       "continuingBallots": 33217,
       "transfers": []
@@ -80,10 +80,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 293836
+          "votes": 1778
         }
       ],
-      "undervote": 293773,
+      "undervote": 1715,
       "overvote": 63,
       "continuingBallots": 31499,
       "transfers": [

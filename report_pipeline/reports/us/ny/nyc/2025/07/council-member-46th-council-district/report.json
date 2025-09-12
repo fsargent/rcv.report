@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "46th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 16197,
   "candidates": [
     {
       "name": "Mercedes Narcisse",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 380437
+          "votes": 43
         }
       ],
-      "undervote": 380394,
+      "undervote": 0,
       "overvote": 43,
       "continuingBallots": 16154,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 380468
+          "votes": 74
         }
       ],
-      "undervote": 380425,
+      "undervote": 31,
       "overvote": 43,
       "continuingBallots": 16123,
       "transfers": [

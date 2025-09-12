@@ -14,13 +14,13 @@
     "electionName": "Primary Election",
     "loaderParams": {
       "candidatesFile": "Primary Election 2025 - 06-24-2025_CandidacyID_To_Name.xlsx",
-      "cvrPattern": "2025P3V.+\\.xlsx",
+      "cvrPattern": "2025P\\d?V.+\\.xlsx",
       "jurisdictionName": "36th Council District",
       "officeName": "DEM Council Member"
     },
     "website": null
   },
-  "ballotCount": 396591,
+  "ballotCount": 30499,
   "candidates": [
     {
       "name": "Chi Ajani Osse",
@@ -52,10 +52,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 366162
+          "votes": 70
         }
       ],
-      "undervote": 366092,
+      "undervote": 0,
       "overvote": 70,
       "continuingBallots": 30429,
       "transfers": []
@@ -72,10 +72,10 @@
         },
         {
           "allocatee": "X",
-          "votes": 366353
+          "votes": 261
         }
       ],
-      "undervote": 366282,
+      "undervote": 190,
       "overvote": 71,
       "continuingBallots": 30238,
       "transfers": [
