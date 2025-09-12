@@ -1,0 +1,172 @@
+{
+  "name": "Maine",
+  "path": "us/me",
+  "kind": "state",
+  "offices": {
+    "cd01": {
+      "name": "Congressional District 1"
+    },
+    "cd01-primary-dem": {
+      "name": "Congressional District 1 (D)"
+    },
+    "cd01-primary-rep": {
+      "name": "Congressional District 1 (R)"
+    },
+    "cd02": {
+      "name": "Congressional District 2"
+    },
+    "cd02-primary-dem": {
+      "name": "Congressional District 2 (D)"
+    },
+    "cd02-primary-rep": {
+      "name": "Congressional District 2 (R)"
+    },
+    "gov-primary-dem": {
+      "name": "Governor (D)"
+    },
+    "sr41-dem": {
+      "name": "State Representative - District 41 (D)"
+    },
+    "sr47-dem": {
+      "name": "State Representative - District 47 (D)"
+    },
+    "sr49-dem": {
+      "name": "State Representative - District 49 (D)"
+    },
+    "sr90-dem": {
+      "name": "State Representative - District 90 (D)"
+    },
+    "ss11-dem": {
+      "name": "State Senate - District 11 (D)"
+    }
+  },
+  "elections": {
+    "2018/06": {
+      "name": "Primary Election",
+      "date": "2018-06-12",
+      "dataFormat": "us_me",
+      "tabulationOptions": null,
+      "normalization": "maine",
+      "contests": [
+        {
+          "office": "cd02-primary-dem",
+          "loaderParams": {
+            "files": "congressd2-1.xlsx;congressd2-2.xlsx;congressd2-3.xlsx;congressd2-4.xlsx"
+          }
+        },
+        {
+          "office": "gov-primary-dem",
+          "loaderParams": {
+            "files": "govd-1.xlsx;govd-2.xlsx;govd-3.xlsx;govd-4.xlsx;govd-5.xlsx"
+          }
+        }
+      ],
+      "files": {
+        "congressd2-1.xlsx": "f786b367746fdd4dca007de54e6e3885cb2a4b7a",
+        "congressd2-2.xlsx": "4ac61981e6710d413ba4a4c7f6d83c6af342b679",
+        "congressd2-3.xlsx": "8385c8d36ecbcadef405aee0f67d5f4bbde3bea7",
+        "congressd2-4.xlsx": "d1940f36c21191411141db9bb27166419e78f2e3",
+        "govd-1.xlsx": "e2005438e7df7d31da7c779e64fc21d1c8dab0fa",
+        "govd-2.xlsx": "1ba44a180dcbd5828c0ae23e6740d4c20f74953e",
+        "govd-3.xlsx": "cca35ca455a1020ede3b52473ed9ded924d1d1a9",
+        "govd-4.xlsx": "76f1ac0501f4ec24557a389d7947da2ddedf41e2",
+        "govd-5.xlsx": "d3433bb08666bb7bcfb27cd706b1ecfebf048dfa"
+      },
+      "website": "https://www.maine.gov/sos/cec/elec/results/results18.html#june18"
+    },
+    "2018/11": {
+      "name": "General Election",
+      "date": "2018-11-06",
+      "dataFormat": "us_me",
+      "tabulationOptions": null,
+      "normalization": "maine",
+      "contests": [
+        {
+          "office": "cd02",
+          "loaderParams": {
+            "files": "Nov18CVRExportFINAL1.xlsx;Nov18CVRExportFINAL2.xlsx;Nov18CVRExportFINAL3.xlsx;AUXCVRProofedCVR95RepCD2.xlsx;RepCD2-8final.xlsx;UOCAVA-AUX-CVRRepCD2.xlsx;UOCAVA-FINALRepCD2.xlsx;UOCAVA2CVRRepCD2.xlsx"
+          }
+        }
+      ],
+      "files": {
+        "AUXCVRProofedCVR95RepCD2.xlsx": "7c71574723e61c0eb1e13eea57c47eb24384da07",
+        "Nov18CVRExportFINAL1.xlsx": "196513adbe019a623d69bce3914b7135a021a3ac",
+        "Nov18CVRExportFINAL2.xlsx": "9defa6da5adc481eac2bb72a348583b6eddaf1d6",
+        "Nov18CVRExportFINAL3.xlsx": "7f3f7a539b119a14396f7df1c52a6a3128e2087d",
+        "RepCD2-8final.xlsx": "b0911053cfe6d144ec82fbeb637d6c555a31a4fb",
+        "UOCAVA-AUX-CVRRepCD2.xlsx": "593f0ee1a5f7a74082d59e097a30bcc2f9c29d2e",
+        "UOCAVA-FINALRepCD2.xlsx": "710675ddef04b546b95ba2ddf305369742e73e6d",
+        "UOCAVA2CVRRepCD2.xlsx": "1ab98cfb6bd40b9b80ba2e6cec894abd5b7ecac7"
+      },
+      "website": "https://www.maine.gov/sos/cec/elec/results/results18.html#Nov6"
+    },
+    "2020/07": {
+      "name": "Primary Election",
+      "date": "2020-07-14",
+      "dataFormat": "us_me",
+      "tabulationOptions": null,
+      "normalization": "maine",
+      "contests": [
+        {
+          "office": "cd02-primary-rep",
+          "loaderParams": {
+            "files": "cg2-1.xlsx;cg2-2.xlsx;cg2-3.xlsx;cg2-4.xlsx;cg2-uocava.xlsx"
+          }
+        },
+        {
+          "office": "ss11-dem",
+          "loaderParams": {
+            "files": "ss11-1.xlsx;ss11-2.xlsx;ss11-uocava.xlsx"
+          }
+        },
+        {
+          "office": "sr41-dem",
+          "loaderParams": {
+            "files": "sr41-1.xlsx;sr41-2.xlsx;sr41-uocava.xlsx"
+          }
+        },
+        {
+          "office": "sr47-dem",
+          "loaderParams": {
+            "files": "sr47-1.xlsx;sr47-2.xlsx;sr47-uocava.xlsx"
+          }
+        },
+        {
+          "office": "sr49-dem",
+          "loaderParams": {
+            "files": "sr49-1.xlsx;sr49-2.xlsx;sr49-uocava.xlsx"
+          }
+        },
+        {
+          "office": "sr90-dem",
+          "loaderParams": {
+            "files": "sr90-1.xlsx;sr90-2.xlsx;sr90-uocava.xlsx"
+          }
+        }
+      ],
+      "files": {
+        "cg2-1.xlsx": "40b899adb424cc9ac025aadb923771c3816866ff",
+        "cg2-2.xlsx": "f98317836b51824866f2684d19a684d3462376b1",
+        "cg2-3.xlsx": "40582201a75260763efa7b3f0e98a283a3e3fdc8",
+        "cg2-4.xlsx": "59ff845bc0be2ce13bf6921bd811b0adea0b7b8a",
+        "cg2-uocava.xlsx": "ae85cdac0cae93fff981eb0b821010c464d2bd47",
+        "sr41-1.xlsx": "c5652538d4f51ba9e6d6c509d66e308835aa016e",
+        "sr41-2.xlsx": "980b923092d14338a163ca141870e5f921c2d168",
+        "sr41-uocava.xlsx": "1e61a79da70858808edfe267182b542f06e7c3c8",
+        "sr47-1.xlsx": "ef417f0f8e3637822bc714b308b374f066e0b33f",
+        "sr47-2.xlsx": "73be8c14f12fc5890e8d2592d2bd994b4db67584",
+        "sr47-uocava.xlsx": "ffdf34ea2b24d559fd3317ad7d0faaf6654ded0c",
+        "sr49-1.xlsx": "ec3e63e17f5b97066671735790dfc969ed4cc9e1",
+        "sr49-2.xlsx": "e1a0bbbf49edfa35bff6e41ef1979d5ff794c0e4",
+        "sr49-uocava.xlsx": "62871f5da2df23fa53c2d148f7f217fd2f42c3b2",
+        "sr90-1.xlsx": "4c9ea865fe64e615ada3a74353fbb86011344345",
+        "sr90-2.xlsx": "afcc08cf795400e75f29a9d0e880e5f511a05139",
+        "sr90-uocava.xlsx": "d47891489f4f99df1be9255554edaf6f7e40e37a",
+        "ss11-1.xlsx": "0a8fc826d7efc9f0c28b4f7d2ad03767c9c2ebf0",
+        "ss11-2.xlsx": "9150fd6c981b2c0997a1545020ba5c127b2374a4",
+        "ss11-uocava.xlsx": "0a1123c7ff7c81a5b264a15b27df72e76fe30ef7"
+      },
+      "website": "https://www.maine.gov/sos/cec/elec/results/results20.html#julytab"
+    }
+  }
+}

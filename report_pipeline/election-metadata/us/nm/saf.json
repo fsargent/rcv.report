@@ -1,0 +1,72 @@
+{
+  "name": "Santa Fe",
+  "path": "us/nm/saf",
+  "kind": "municipal",
+  "offices": {
+    "dc1": {
+      "name": "District 1 Councilor"
+    },
+    "dc2": {
+      "name": "District 2 Councilor"
+    },
+    "dc3": {
+      "name": "District 3 Councilor"
+    },
+    "dc4": {
+      "name": "District 4 Councilor"
+    },
+    "mayor": {
+      "name": "Mayor"
+    }
+  },
+  "elections": {
+    "2018/03": {
+      "name": "Regular Municipal Election",
+      "date": "2018-03-06",
+      "dataFormat": "nist_sp_1500",
+      "tabulationOptions": null,
+      "normalization": "simple",
+      "contests": [
+        {
+          "office": "mayor",
+          "loaderParams": {
+            "contest": "1",
+            "cvr": "CVR_Export_20180306233748.zip"
+          }
+        },
+        {
+          "office": "dc1",
+          "loaderParams": {
+            "contest": "2",
+            "cvr": "CVR_Export_20180306233748.zip"
+          }
+        },
+        {
+          "office": "dc2",
+          "loaderParams": {
+            "contest": "3",
+            "cvr": "CVR_Export_20180306233748.zip"
+          }
+        },
+        {
+          "office": "dc3",
+          "loaderParams": {
+            "contest": "4",
+            "cvr": "CVR_Export_20180306233748.zip"
+          }
+        },
+        {
+          "office": "dc4",
+          "loaderParams": {
+            "contest": "5",
+            "cvr": "CVR_Export_20180306233748.zip"
+          }
+        }
+      ],
+      "files": {
+        "CVR_Export_20180306233748.zip": "bb53411889b40cb9f24579477a624043a4e76b50"
+      },
+      "website": "https://www.santafenm.gov/march_6_2018_regular_municipal_election_results_1"
+    }
+  }
+}
