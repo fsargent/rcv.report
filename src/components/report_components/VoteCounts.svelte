@@ -57,7 +57,7 @@
   <g transform={`translate(${labelSpace} 0)`}>
     {#each sortedCandidateVotes as votes, i}
       <g
-        class={votes.roundEliminated === null ? '' : 'eliminated'}
+        class:eliminated={votes.roundEliminated !== undefined}
         transform={`translate(0 ${outerHeight * (i + 0.5)})`}>
         <text font-size="12" text-anchor="end" dominant-baseline="middle">
           {getCandidate(votes.candidate).name}
@@ -79,7 +79,7 @@
             received <strong>${votes.transferVotes.toLocaleString()}</strong> transfer votes.`}
             />
         </g>
-        {#if votes.roundEliminated !== null}
+        {#if votes.roundEliminated !== undefined}
             <text
             font-size="12"
             dominant-baseline="middle"

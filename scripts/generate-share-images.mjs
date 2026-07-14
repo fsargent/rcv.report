@@ -10,6 +10,7 @@ const execAsync = promisify(exec);
 
 let detectedPort = 3000;
 let devServerProcess = null;
+const databasePath = "report_pipeline/reports.sqlite3";
 
 // Logging utilities
 const logLevels = {
@@ -183,60 +184,18 @@ async function processBatch(
 async function processReport(report, browser, retries = 1) {
   const reportPath = report.path;
   const outputPath = `static/share/${reportPath}.png`;
-  const reportJsonPath = `report_pipeline/reports/${reportPath}/report.json`;
   const outputDir = path.dirname(outputPath);
   const reportStartTime = Date.now();
 
   try {
-    // Verify report file exists and has data
+    // Check if image already exists and is newer than the report database
     try {
-      const reportContent = await fs.readFile(reportJsonPath, "utf8");
-      const reportData = JSON.parse(reportContent);
-
-      // Skip if report is empty (no ballots, candidates, or rounds)
-      if (
-        reportData.ballotCount === 0 ||
-        !reportData.candidates ||
-        reportData.candidates.length === 0 ||
-        !reportData.rounds ||
-        reportData.rounds.length === 0
-      ) {
-        return {
-          success: true,
-          skipped: true,
-          path: reportPath,
-          time: Date.now() - reportStartTime,
-          reason: "empty report",
-        };
-      }
-    } catch (error) {
-      // If file doesn't exist, skip it (shouldn't happen since we check earlier, but handle gracefully)
-      if (error.code === "ENOENT") {
-        return {
-          success: true,
-          skipped: true,
-          path: reportPath,
-          time: Date.now() - reportStartTime,
-          reason: "report file not found",
-        };
-      }
-      return {
-        success: false,
-        skipped: false,
-        path: reportPath,
-        error: `Report file error: ${error.message}`,
-        time: Date.now() - reportStartTime,
-      };
-    }
-
-    // Check if image already exists and is newer than report
-    try {
-      const [imageStat, reportStat] = await Promise.all([
+      const [imageStat, databaseStat] = await Promise.all([
         stat(outputPath),
-        stat(reportJsonPath),
+        stat(databasePath),
       ]);
 
-      if (imageStat.mtimeMs >= reportStat.mtimeMs) {
+      if (imageStat.mtimeMs >= databaseStat.mtimeMs) {
         return {
           success: true,
           skipped: true,
@@ -376,20 +335,23 @@ async function generateShareImages() {
     const browserInitTime = Date.now() - browserStartTime;
     log(logLevels.DEBUG, `Browser launched in ${browserInitTime}ms`);
 
-    // Read reports index
+    // Read the report index from the running application.
     const indexStartTime = Date.now();
-    const indexRaw = await fs.readFile(
-      "report_pipeline/reports/index.json",
-      "utf8",
+    const indexResponse = await fetch(
+      `http://localhost:${detectedPort}/api/reports.json`,
     );
-    const index = JSON.parse(indexRaw);
+    if (!indexResponse.ok) {
+      throw new Error(
+        `Failed to load report index: ${indexResponse.status} ${indexResponse.statusText}`,
+      );
+    }
+    const index = await indexResponse.json();
     const indexLoadTime = Date.now() - indexStartTime;
     log(logLevels.DEBUG, `Index loaded in ${indexLoadTime}ms`);
 
-    // Flatten all contests from all elections, filtering out empty reports and missing files
+    // Flatten all contests from all elections, filtering out empty reports.
     const reports = [];
     const skippedEmpty = [];
-    const skippedMissing = [];
     for (const election of index.elections || []) {
       for (const contest of election.contests || []) {
         // Skip empty reports (no candidates, no rounds, or no ballots)
@@ -403,15 +365,6 @@ async function generateShareImages() {
         }
 
         const reportPath = `${election.path}/${contest.office}`;
-        const reportJsonPath = `report_pipeline/reports/${reportPath}/report.json`;
-
-        // Skip if report file doesn't exist
-        try {
-          await stat(reportJsonPath);
-        } catch {
-          skippedMissing.push(reportPath);
-          continue;
-        }
 
         reports.push({
           path: reportPath,
@@ -425,15 +378,6 @@ async function generateShareImages() {
       log(logLevels.INFO, `Skipped ${skippedEmpty.length} empty reports:`, {
         reports: skippedEmpty,
       });
-    }
-    if (skippedMissing.length > 0) {
-      log(
-        logLevels.INFO,
-        `Skipped ${skippedMissing.length} missing report files:`,
-        {
-          reports: skippedMissing,
-        },
-      );
     }
     log(logLevels.INFO, `Found ${reports.length} reports to process`);
 
@@ -554,7 +498,7 @@ async function startDevServer() {
 
   const env = {
     ...process.env,
-    RANKED_VOTE_DB: "report_pipeline/reports.sqlite3",
+    RANKED_VOTE_DB: databasePath,
   };
 
   // Use spawn without shell to avoid security warning

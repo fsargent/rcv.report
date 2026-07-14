@@ -36,7 +36,7 @@ db.exec(`
     firstFinal TEXT,
     rankingDistribution TEXT,
     UNIQUE(path, office)
-  );
+  ) STRICT;
 
   -- Candidates table
   CREATE TABLE IF NOT EXISTS candidates (
@@ -51,7 +51,7 @@ db.exec(`
     roundEliminated INTEGER,
     winner INTEGER DEFAULT 0,
     FOREIGN KEY (report_id) REFERENCES reports(id) ON DELETE CASCADE
-  );
+  ) STRICT;
 
   -- Rounds table for tabulation rounds
   CREATE TABLE IF NOT EXISTS rounds (
@@ -62,7 +62,7 @@ db.exec(`
     overvote INTEGER DEFAULT 0,
     continuingBallots INTEGER DEFAULT 0,
     FOREIGN KEY (report_id) REFERENCES reports(id) ON DELETE CASCADE
-  );
+  ) STRICT;
 
   -- Allocations within each round
   CREATE TABLE IF NOT EXISTS allocations (
@@ -71,7 +71,7 @@ db.exec(`
     allocatee TEXT NOT NULL,  -- candidate_index or 'X' for exhausted
     votes INTEGER NOT NULL,
     FOREIGN KEY (round_id) REFERENCES rounds(id) ON DELETE CASCADE
-  );
+  ) STRICT;
 
   -- Transfers between rounds
   CREATE TABLE IF NOT EXISTS transfers (
@@ -81,7 +81,7 @@ db.exec(`
     to_allocatee TEXT NOT NULL,       -- candidate_index or 'X' for exhausted
     count INTEGER NOT NULL,
     FOREIGN KEY (round_id) REFERENCES rounds(id) ON DELETE CASCADE
-  );
+  ) STRICT;
 
   -- Indexes for common queries
   CREATE INDEX IF NOT EXISTS idx_reports_path ON reports(path);
