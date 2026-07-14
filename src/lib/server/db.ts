@@ -223,7 +223,7 @@ export function getReport(path: string): IContestReport | null {
       candidate: row.candidate_index,
       firstRoundVotes: row.firstRoundVotes,
       transferVotes: row.transferVotes,
-      roundEliminated: row.roundEliminated,
+      roundEliminated: row.roundEliminated ?? undefined,
     }));
 
     // Get rounds
