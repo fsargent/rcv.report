@@ -24,6 +24,9 @@
     "gov-primary-dem": {
       "name": "Governor (D)"
     },
+    "gov-primary-rep": {
+      "name": "Governor (R)"
+    },
     "sr41-dem": {
       "name": "State Representative - District 41 (D)"
     },
@@ -38,9 +41,92 @@
     },
     "ss11-dem": {
       "name": "State Senate - District 11 (D)"
+    },
+    "ss4-rep": {
+      "name": "State Senate - District 4 (R)"
+    },
+    "sr58-rep": {
+      "name": "State Representative - District 58 (R)"
     }
   },
   "elections": {
+    "2026/06": {
+      "name": "Primary Election",
+      "date": "2026-06-09",
+      "dataFormat": "us_me",
+      "tabulationOptions": null,
+      "normalization": "maine",
+      "contests": [
+        {
+          "office": "cd02-primary-dem",
+          "loaderParams": {
+            "files": "DEM CG2 Additional CVR Export 20260618.xlsx;DEM CG2 Vienna 20260618.xlsx;Jun26 DEM CG2 20260618.xlsx;Jun26 DEM CG2 Auburn 2060616.xlsx;Jun26 DEM CG2 AUX MANUAL1 20260617.xlsx;Jun26 DEM CG2 AUX MANUAL2 20260617.xlsx;Jun26 DEM CG2 AUX MANUAL3 Updated 20260623.xlsx;Representative to Congress District 2 (D) UOCAVA.xlsx"
+          }
+        },
+        {
+          "office": "gov-primary-dem",
+          "loaderParams": {
+            "files": "DEM Gov Additional CVR Export 20260618.xlsx;DEM Gov Vienna 20260618.xlsx;Governor (D) UOCAVA.xlsx;Jun26 DEM GOV 20260618 - 1.xlsx;Jun26 DEM GOV 20260618 - 2.xlsx;Jun26 DEM GOV 20260618.xlsx;Jun26 DEM Gov Auburn 20260616.xlsx;Jun26 DEM Gov AUX MANUAL1 20260617.xlsx;Jun26 DEM Gov AUX MANUAL2 20260617.xlsx;Jun26 DEM Gov AUX MANUAL3 Updated 20260623.xlsx"
+          }
+        },
+        {
+          "office": "gov-primary-rep",
+          "loaderParams": {
+            "files": "Governor (R) UOCAVA.xlsx;Jun26 REP GOV 20260618 - 1.xlsx;Jun26 REP GOV 20260618_2.xlsx;Jun26 REP Gov Auburn 20260616.xlsx;Jun26 REP Gov AUX1 20260617.xlsx;Jun26 REP Gov AUX2 20260617.xlsx;Jun26 REP Gov AUX3 MANUAL Updated 20260623.xlsx;REP Gov Additional CVR Export 20260618.xlsx;REP Gov Vienna 20260618.xlsx"
+          }
+        },
+        {
+          "office": "ss4-rep",
+          "loaderParams": {
+            "files": "Jun26 REP SS4 20260618.xlsx;Jun26 REP SS4 AUX MANUAL 20260617.xlsx;State Senator District 4 (R) UOCAVA.xlsx"
+          }
+        },
+        {
+          "office": "sr58-rep",
+          "loaderParams": {
+            "files": "Jun26 REP SR58 20260618.xlsx;Jun26 REP SR58 AUX1.xlsx;REP SR58 Additional CVR Export 20260618.xlsx;REP SR58 Vienna 20260618.xlsx;Representative to the Legislature District 58 (R) UOCAVA.xlsx"
+          }
+        }
+      ],
+      "files": {
+        "DEM CG2 Additional CVR Export 20260618.xlsx": "a9e5191a496979597588450489682de592036c00",
+        "DEM CG2 Vienna 20260618.xlsx": "ea401db723ef744fe786e182b34c21157ec62baf",
+        "DEM Gov Additional CVR Export 20260618.xlsx": "47a94b0048da61bba55ca6fedef7d56bec02e30c",
+        "DEM Gov Vienna 20260618.xlsx": "9fa5533bd5b42e7d2a78d5749380c55664379eea",
+        "Governor (D) UOCAVA.xlsx": "6feef02b8baa82e510f9ab206a80598c339a9adb",
+        "Governor (R) UOCAVA.xlsx": "951f077bc6ef08e75f10ee4a75aecbbd34627455",
+        "Jun26 DEM CG2 20260618.xlsx": "5aa788a1933f84583b62939bc5ea49280767c507",
+        "Jun26 DEM CG2 AUX MANUAL1 20260617.xlsx": "5beb3a887a4d34d5a721ff82e9182b01bea833a1",
+        "Jun26 DEM CG2 AUX MANUAL2 20260617.xlsx": "1fc7e144b953dead2c420c505eb3b4ee67e4188d",
+        "Jun26 DEM CG2 AUX MANUAL3 Updated 20260623.xlsx": "c857ac42151a3e4d5f5050059c75a2243c831000",
+        "Jun26 DEM CG2 Auburn 2060616.xlsx": "dd87ac36c95511291f7b6e1ef6f6bf19f5790b7f",
+        "Jun26 DEM GOV 20260618 - 1.xlsx": "21496cf7d661d59f7ce578618235dd91921cac6a",
+        "Jun26 DEM GOV 20260618 - 2.xlsx": "894840cda150a2cb9e47940faa968667a76cb155",
+        "Jun26 DEM GOV 20260618.xlsx": "2d60a081c3bd0a422ab7b68280c9ab4f8f7667b8",
+        "Jun26 DEM Gov AUX MANUAL1 20260617.xlsx": "ce0153b74b0749e47679e5fe9c1a21cec746fa83",
+        "Jun26 DEM Gov AUX MANUAL2 20260617.xlsx": "5fe3d9ababe272d332364c5e4cd39ac05722d9d7",
+        "Jun26 DEM Gov AUX MANUAL3 Updated 20260623.xlsx": "590eb9e1a8dd938b5ffa4ff8af4052b683ffcd27",
+        "Jun26 DEM Gov Auburn 20260616.xlsx": "aebfe737810713bb76339a8c396c786e3aa0cff4",
+        "Jun26 REP GOV 20260618 - 1.xlsx": "346b6057cee4701698531a03bef560db84823ac7",
+        "Jun26 REP GOV 20260618_2.xlsx": "1e084f5847782d7925091de0f413114465328506",
+        "Jun26 REP Gov AUX1 20260617.xlsx": "c0879bf11533fb9af78afd2bf8043121611d8837",
+        "Jun26 REP Gov AUX2 20260617.xlsx": "7d6696dbb6e31b8382caec23b989fefe5c82ebc9",
+        "Jun26 REP Gov AUX3 MANUAL Updated 20260623.xlsx": "8fdf2624baf451acac24930ca39bfabbc432be3e",
+        "Jun26 REP Gov Auburn 20260616.xlsx": "0d1fec1fe7ef40be44c56341d7294b18cf65bd70",
+        "Jun26 REP SR58 20260618.xlsx": "5705b35111092f0437a6e70364baaf526a03ac2b",
+        "Jun26 REP SR58 AUX1.xlsx": "92e467a5d2ea18eea201e8d7e395df527d330775",
+        "Jun26 REP SS4 20260618.xlsx": "8142e1b02c842b3ea71a0ff2482801c53dccb289",
+        "Jun26 REP SS4 AUX MANUAL 20260617.xlsx": "bf80fc92583154956f5197bf1db2995b2314ddac",
+        "REP Gov Additional CVR Export 20260618.xlsx": "bdd7b36933dd1220509db7fe330cef04bd297dcb",
+        "REP Gov Vienna 20260618.xlsx": "5443ddccfdefd3baaadf46a83285f2341c887f6a",
+        "REP SR58 Additional CVR Export 20260618.xlsx": "158c97a2716ad17dbb19204639b306ed142169d2",
+        "REP SR58 Vienna 20260618.xlsx": "ebd21999b7203a4078b15a4c8145d85d519e583d",
+        "Representative to Congress District 2 (D) UOCAVA.xlsx": "6bf73475bb113f5a2be008550ff305771e5e8814",
+        "Representative to the Legislature District 58 (R) UOCAVA.xlsx": "726113cf2340fd8e8c54da6fcd32ca44ad78e73d",
+        "State Senator District 4 (R) UOCAVA.xlsx": "e049bfb4d98473ea6d4380c19e4a4e6751406929"
+      },
+      "website": "https://www.maine.gov/sos/elections-voting/election-results-data"
+    },
     "2018/06": {
       "name": "Primary Election",
       "date": "2018-06-12",
