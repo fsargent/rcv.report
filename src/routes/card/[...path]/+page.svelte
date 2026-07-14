@@ -47,9 +47,8 @@
 
 		{#if report.totalVotes}
 			<div class="segment">
-				<VoteCounts candidateVotes={report.totalVotes} />
+				<VoteCounts candidateVotes={report.totalVotes} winner={report.winner} />
 			</div>
 		{/if}
 	</div>
 </div>
-
