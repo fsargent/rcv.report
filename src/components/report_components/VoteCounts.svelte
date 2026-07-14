@@ -9,6 +9,7 @@
   import tooltip from "../../tooltip";
 
   export let candidateVotes: ICandidateVotes[];
+  export let winner: CandidateId | undefined = undefined;
 
   const { getCandidate } = getContext("candidates") as CandidateContext;
 
@@ -41,6 +42,14 @@
     fill: #e7ada0;
   }
 
+  .winner .firstRound {
+    fill: #700000;
+  }
+
+  .winner .transfer {
+    fill: #c8786b;
+  }
+
   .eliminated {
     opacity: 30%;
   }
@@ -57,7 +66,8 @@
   <g transform={`translate(${labelSpace} 0)`}>
     {#each sortedCandidateVotes as votes, i}
       <g
-        class={votes.roundEliminated === null ? '' : 'eliminated'}
+        class:winner={votes.candidate === winner}
+        class:eliminated={votes.roundEliminated != null}
         transform={`translate(0 ${outerHeight * (i + 0.5)})`}>
         <text font-size="12" text-anchor="end" dominant-baseline="middle">
           {getCandidate(votes.candidate).name}
@@ -79,7 +89,7 @@
             received <strong>${votes.transferVotes.toLocaleString()}</strong> transfer votes.`}
             />
         </g>
-        {#if votes.roundEliminated !== null}
+        {#if votes.roundEliminated != null}
             <text
             font-size="12"
             dominant-baseline="middle"
