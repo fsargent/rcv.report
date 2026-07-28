@@ -1,2 +1,4 @@
 raw-data/
+preprocessed/
+target/
 .idea
