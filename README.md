@@ -42,6 +42,15 @@ bun run report:extract
 # Time: ~5-10 minutes for 12 GB of data
 ```
 
+> [!CAUTION]
+> The committed Alameda County November 2024 raw-data archive is truncated.
+> Its published reports remain available, but they are aggregate outputs and
+> cannot reconstruct the missing cast vote records. Consequently,
+> `bun run report:extract` currently reports that archive as invalid and exits
+> nonzero after extracting other valid archives. Replacing it requires the
+> complete final Alameda County CVR export; the available preliminary export is
+> not equivalent to the data used for the published reports.
+
 ### 3. Install and Run
 
 ```bash

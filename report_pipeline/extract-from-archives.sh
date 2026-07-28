@@ -36,38 +36,56 @@ mkdir -p "$TARGET_DIR"
 # Function to extract an election archive
 extract_election() {
     local archive_path="$1"
-    local relative_path="${archive_path#$ARCHIVE_DIR/}"
-    local parent_dir=$(dirname "$relative_path")
-    local archive_name=$(basename "$archive_path" .tar.xz)
+    local relative_path
+    relative_path="${archive_path#"$ARCHIVE_DIR"/}"
+    local parent_dir
+    parent_dir=$(dirname "$relative_path")
+    local archive_name
+    archive_name=$(basename "$archive_path" .tar.xz)
 
     # Determine target directory
     local target_parent="$TARGET_DIR/$parent_dir"
     local target_path="$target_parent/$archive_name"
+
+    # Validate even archives whose destination already exists. Otherwise a
+    # corrupt archive can be hidden indefinitely by a partial prior extraction.
+    if ! tar -tJf "$archive_path" >/dev/null 2>&1; then
+        echo "  [ERROR] Invalid archive: $archive_path"
+        return 1
+    fi
 
     # Skip if already extracted and up-to-date
     if [ -d "$target_path" ]; then
         # Check if archive is newer than extracted directory
         if [ "$archive_path" -nt "$target_path" ]; then
             echo "  [UPDATE] $relative_path (archive changed)"
-            rm -rf "$target_path"
         else
             return 0
         fi
     fi
 
     # Get archive size
-    local archive_size=$(du -sh "$archive_path" | cut -f1)
+    local archive_size
+    archive_size=$(du -sh "$archive_path" | cut -f1)
 
     echo "  [START] Extracting $relative_path ($archive_size)"
 
     # Create target directory
     mkdir -p "$target_parent"
+	local temp_parent
+	temp_parent=$(mktemp -d "$target_parent/.${archive_name}.extract.XXXXXX")
 
-    # Extract archive
-    if tar -xJf "$archive_path" -C "$target_parent" 2>/dev/null; then
-        local extracted_size=$(du -sh "$target_path" | cut -f1)
+    # Extract to a temporary sibling, then replace the destination only after
+    # extraction has completed successfully.
+    if tar -xJf "$archive_path" -C "$temp_parent" 2>/dev/null && [ -d "$temp_parent/$archive_name" ]; then
+		rm -rf "$target_path"
+		mv "$temp_parent/$archive_name" "$target_path"
+		rm -rf "$temp_parent"
+        local extracted_size
+        extracted_size=$(du -sh "$target_path" | cut -f1)
         echo "  [DONE] $target_path ($extracted_size)"
     else
+		rm -rf "$temp_parent"
         echo "  [ERROR] Failed to extract $archive_path"
         return 1
     fi
@@ -81,7 +99,10 @@ echo "Step 1: Finding all archives..."
 echo ""
 
 # Find all tar.xz archives
-ARCHIVES=($(find "$ARCHIVE_DIR" -name "*.tar.xz" -type f | sort))
+ARCHIVES=()
+while IFS= read -r archive_path; do
+    ARCHIVES+=("$archive_path")
+done < <(find "$ARCHIVE_DIR" -name "*.tar.xz" -type f | sort)
 
 if [ ${#ARCHIVES[@]} -eq 0 ]; then
     echo "No archives found in $ARCHIVE_DIR/"
@@ -110,4 +131,3 @@ echo "  Archives: ${#ARCHIVES[@]}"
 echo "  Target: $TARGET_DIR/"
 echo ""
 echo "Note: $TARGET_DIR/ is gitignored and safe to modify"
-
